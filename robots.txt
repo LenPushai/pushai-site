@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pushai.co.za/sitemap.xml
