@@ -3,3 +3,6 @@ Thumbs.db
 *.log
 review.md
 sanction.md
+.idea/
+hero-preview.html
+hero-nopanel.html

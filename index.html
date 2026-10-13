@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PUSH AI — Custom business software for SMEs | South Africa</title>
-  <meta name="description" content="PUSH AI solves business problems with software: real production systems for SMEs across South Africa and Africa, built with AI-augmented delivery, gated by a senior delivery lead, at 20–30% below agency pricing. Free 90-minute scoping session." />
+  <meta name="description" content="PUSH AI solves business problems with software: real production systems for SMEs in any industry across South Africa and Africa, built with AI-augmented delivery, gated by a senior delivery lead, at 20–30% below agency pricing. Free 90-minute scoping session." />
   <meta property="og:title" content="PUSH AI — Tell us the problem. We build the fix." />
   <meta property="og:description" content="Custom business software for SMEs across South Africa and Africa — live in real businesses today, at 20–30% below agency pricing. Free 90-minute scoping session." />
   <link rel="canonical" href="https://pushai.co.za/" />
@@ -58,7 +58,7 @@
       --text-strong:  var(--paper);
       --text-body:    rgba(251, 250, 247, 0.82);
       --text-muted:   rgba(251, 250, 247, 0.56);
-      --text-faint:   rgba(251, 250, 247, 0.38);
+      --text-faint:   rgba(251, 250, 247, 0.56);
       --text-on-accent: #FFFFFF;
       --text-accent:  var(--accent);
 
@@ -88,7 +88,7 @@
       --text-strong:  var(--ink-800);
       --text-body:    var(--gray-700);
       --text-muted:   var(--gray-600);
-      --text-faint:   var(--gray-400);
+      --text-faint:   var(--gray-600);
       --text-on-accent: #FFFFFF;
       --text-accent:  var(--accent-press);
 
@@ -130,7 +130,7 @@
     h1, h2, h3, h4 { margin: 0; color: var(--text-strong); }
     .h1 {
       font-weight: 700;
-      font-size: clamp(40px, 5.4vw, 76px);
+      font-size: clamp(38px, 4.9vw, 68px);
       line-height: 1.0;
       letter-spacing: var(--tracking-display);
     }
@@ -252,8 +252,10 @@
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 48px;
-      align-items: center;
+      align-items: start;
     }
+    .hero-grid .terminal { margin-top: 44px; }
+    @media (max-width: 900px) { .hero-grid .terminal { margin-top: 0; } }
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
       .navlinks { display: none; }
@@ -316,7 +318,7 @@
       margin-left: 8px;
       font-family: var(--font-mono);
       font-size: 12px;
-      color: rgba(251, 250, 247, 0.38);
+      color: rgba(251, 250, 247, 0.56);
     }
     .terminal-body {
       padding: 20px 18px 28px;
@@ -338,6 +340,17 @@
       vertical-align: text-bottom;
     }
     @keyframes blink { 50% { opacity: 0; } }
+
+    /* Dashboard island (hero visual) */
+    .dash-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    .dash-tile { background: #21242C; border: 1px solid rgba(251, 250, 247, 0.10); border-radius: 8px; padding: 14px 14px 12px; }
+    .dash-tile .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(251, 250, 247, 0.6); margin-bottom: 6px; }
+    .dash-tile .v { font-family: var(--font-display); font-size: 26px; font-weight: 600; color: #FBFAF7; letter-spacing: -0.02em; line-height: 1; }
+    .dash-tile .v small { font-size: 14px; font-weight: 500; color: rgba(251, 250, 247, 0.6); }
+    .dash-tile .d { font-family: var(--font-mono); font-size: 11px; margin-top: 6px; color: rgba(251, 250, 247, 0.6); }
+    .dash-tile .d.up { color: #34D399; }
+    .dash-tile .d.warn { color: #FEBC2E; }
+    .dash-foot { font-family: var(--font-mono); font-size: 12px; color: rgba(251, 250, 247, 0.56); margin-top: 14px; }
 
     /* Services */
     .services-grid {
@@ -544,8 +557,8 @@
     /* Tech stack */
     .stack-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 24px;
     }
     @media (max-width: 800px) {
       .stack-grid { grid-template-columns: 1fr 1fr; }
@@ -731,21 +744,21 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Quoting"
+          "name": "Quotes & proposals"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Job cards & job tracking"
+          "name": "Work tracking"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Stock"
+          "name": "Reports & dashboards"
         }
       },
       {
@@ -759,14 +772,14 @@
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Enquiry capture"
+          "name": "Enquiries & leads"
         }
       },
       {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Customer records"
+          "name": "Customers & documents"
         }
       }
     ]
@@ -783,7 +796,7 @@
       "name": "What do you actually build?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Real production systems that solve a business problem: operations and job tracking, quoting, stock, bookings, enquiry capture, customer records, online stores. Industry-neutral — fabrication shops, dealerships, online retail, services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite."
+        "text": "Real production systems that solve a business problem: operations and work tracking, quoting, stock, bookings, enquiry capture, customer records, online stores, client portals, reporting. Any industry — workshops, dealerships, retail, clinics, agencies, logistics, professional services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite."
       }
     },
     {
@@ -874,37 +887,38 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">AI-augmented software delivery · From South Africa, for Africa</span>
-          <h1 class="h1">Tell us the problem. <em>We build the fix.</em></h1>
+          <span class="eyebrow">AI-augmented software delivery · South Africa</span>
+          <h1 class="h1">Tell us the problem.<br><em>We build the fix.</em></h1>
           <p class="hero-lead">
-            PUSH AI solves business problems with software. Not templates, not no-code stopgaps — real production systems that run your operations, for businesses that could never afford an agency build. AI does the heavy lifting; a senior delivery lead with twenty years behind him reviews every change before it ships. Agency-grade systems, 20–30% below agency pricing.
+            PUSH AI solves business problems with software — real production systems that run your operations, for any business that could never afford an agency build. AI does the heavy lifting; a senior delivery lead reviews every change before it goes live.
           </p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Book a free scoping session <span class="arrow">→</span></a>
             <a href="#work" class="btn btn-ghost">See the work first</a>
           </div>
           <div class="hero-stats">
-            <div><strong>Live</strong> in real African businesses</div>
+            <div><strong>Live</strong> in real SA businesses</div>
             <div><strong>20–30%</strong> below agency pricing</div>
             <div><strong>Dates</strong> named, then kept</div>
           </div>
         </div>
 
-        <!-- Activity log: what a PUSH AI system records on its own, from day one. Fictional but realistic entries. -->
+        <!-- Owner's report: the numbers every business recognises. Fictional but realistic. -->
         <div class="terminal" aria-hidden="true">
           <div class="terminal-bar">
             <span class="terminal-dot r"></span>
             <span class="terminal-dot y"></span>
             <span class="terminal-dot g"></span>
-            <span class="terminal-title">job-cards — activity log · week 34</span>
+            <span class="terminal-title">your business — this month</span>
           </div>
-          <div class="terminal-body">
-            <div><span class="prompt">09:14</span> <span class="cmd">quote.sent</span> <span class="out">#1044 Naidoo · driveway gate · R12 400</span></div>
-            <div><span class="prompt">09:31</span> <span class="cmd">quote.viewed</span> <span class="out">#1044 · opened on phone</span></div>
-            <div><span class="prompt">Tue 07:40</span> <span class="cmd">job.started</span> <span class="out">#1042 Botha · gate motor · Piet on site</span></div>
-            <div><span class="prompt">Thu 15:02</span> <span class="cmd">job.done</span> <span class="out">#1042 · one day early</span></div>
-            <div><span class="prompt">Fri 11:20</span> <span class="cmd">invoice.paid</span> <span class="out">#1042 · R4 850</span></div>
-            <div><span class="out">every status, timestamped, recorded automatically</span> <span class="cursor"></span></div>
+          <div class="terminal-body" style="padding-top: 18px;">
+            <div class="dash-tiles">
+              <div class="dash-tile"><div class="k">Sales</div><div class="v">R412 000</div><div class="d up">▲ 12% vs last month</div></div>
+              <div class="dash-tile"><div class="k">Gross margin</div><div class="v">31%</div><div class="d up">▲ 2 pts</div></div>
+              <div class="dash-tile"><div class="k">Overdue invoices</div><div class="v">R38 400</div><div class="d warn">5 customers · oldest 41 d</div></div>
+              <div class="dash-tile"><div class="k">Repeat customers</div><div class="v">64%</div><div class="d">of this month's orders</div></div>
+            </div>
+            <div class="dash-foot">from the system that runs your business — not a spreadsheet <span class="cursor"></span></div>
           </div>
         </div>
       </div>
@@ -916,41 +930,42 @@
         <div class="section-head">
           <span class="eyebrow">What we build</span>
           <h2 class="h2">Start with the problem<br>costing you the most hours.</h2>
-          <p class="lead">Whether you make, sell, move or serve, the problem usually looks the same: jobs tracked on WhatsApp, quotes living in spreadsheets, the owner as the bottleneck. We fix one process end to end — scoped in writing, signed off by you in plain language, delivered to production on a date we name — with the logging in place to extend it later.</p>
+          <p class="lead">Whether you make, sell, move, serve or advise, it usually looks the same: work tracked on WhatsApp, quotes and bookings in spreadsheets, the owner as the bottleneck. We fix one process end to end — scoped in writing, delivered on a date we name — and build it so the next one plugs in.</p>
         </div>
 
         <div class="services-grid">
           <article class="service-card">
             <div class="service-num">001</div>
-            <h3>Quoting</h3>
-            <p>Quotes built from your price list, sent from the system, and tracked — sent, viewed, accepted, expired. No more "which one did you send on Monday?"</p>
+            <h3>Quotes &amp; proposals</h3>
+            <p>Built from your price list or rate card, sent from the system, and tracked — sent, viewed, accepted, expired. No more "which version did we send?"</p>
           </article>
           <article class="service-card">
             <div class="service-num">002</div>
-            <h3>Job cards &amp; job tracking</h3>
-            <p>Every job on a board from quoted to invoiced. Who's on it, what's due, what's waiting on parts. Updated from a phone on site.</p>
+            <h3>Work tracking</h3>
+            <p>Every job, case, order or project on one board from start to invoiced. Who's on it, what's due, what's waiting on someone else. Updated from a phone, wherever the work is.</p>
           </article>
           <article class="service-card">
             <div class="service-num">003</div>
-            <h3>Stock</h3>
-            <p>What's on the shelf, what's reserved for a job, what to reorder — without a stocktake to find out.</p>
+            <h3>Bookings &amp; scheduling</h3>
+            <p>Appointments, call-outs, deliveries and team capacity in one calendar, with reminders sent over WhatsApp so fewer people don't show up.</p>
           </article>
           <article class="service-card">
             <div class="service-num">004</div>
-            <h3>Bookings &amp; scheduling</h3>
-            <p>Appointments, call-outs and capacity in one calendar, with reminders sent over WhatsApp.</p>
+            <h3>Enquiries &amp; leads</h3>
+            <p>Every enquiry from your website, WhatsApp, phone or social media, logged with where it came from and who followed up — so you know which marketing actually brings in work.</p>
           </article>
           <article class="service-card">
             <div class="service-num">005</div>
-            <h3>Enquiry capture</h3>
-            <p>Every enquiry from your site, WhatsApp or phone logged with where it came from — so you know which marketing actually brings in work.</p>
+            <h3>Customers &amp; documents</h3>
+            <p>One history per customer or client: quotes, work done, invoices, notes, signed documents. Not scattered across three phones and a shared drive.</p>
           </article>
           <article class="service-card">
             <div class="service-num">006</div>
-            <h3>Customer records</h3>
-            <p>One history per customer: quotes, jobs, invoices, notes. Not scattered across three phones and a spreadsheet.</p>
+            <h3>Reports &amp; dashboards</h3>
+            <p>Sales, margin, overdue invoices, repeat customers — the numbers an owner needs, from the system itself, not retyped into a spreadsheet on Sunday night.</p>
           </article>
         </div>
+        <p class="lead" style="margin: 28px 0 0; max-width: 760px;">Also in scope: stock and orders, online stores, client portals, approval workflows, and links to the accounting package you already use. If it runs your business on spreadsheets and WhatsApp today, it's something we build — in any industry.</p>
       </div>
     </section>
 
@@ -960,7 +975,7 @@
         <div class="section-head">
           <span class="eyebrow">Proof, not promises</span>
           <h2 class="h2">Live in real businesses today.</h2>
-          <p class="lead">Not prototypes. Not slideware. Client names are withheld until each has signed off on being named; the systems and outcomes are real, and walkthroughs are available on request.</p>
+          <p class="lead">Not prototypes. Not slideware. The first builds happen to be in fabrication, automotive and retail; the method is the same for a clinic, an agency, a logistics firm or a law practice. Client names are withheld until each has signed off on being named; the systems and outcomes are real, and walkthroughs are available on request.</p>
         </div>
 
         <div class="work-grid">
@@ -1032,6 +1047,29 @@
             </div>
             <a href="#contact" class="worklink">Discuss a similar system <span class="arrow">→</span></a>
           </article>
+
+          <article class="work-card">
+            <div class="work-tag">Content · PUSH AI product · In build</div>
+            <h3>Sower — sow once, grow everywhere</h3>
+            <p>
+              Our own platform. Write a post once — a new product, a special, a job done — and Sower publishes it to every channel a business runs, from one screen, under the business's own accounts. Facebook and Instagram are live today, photos and video; each platform reports back on its own, so a failed post never hides behind a green tick. TikTok, WhatsApp broadcasts and your website feed are next.
+            </p>
+            <div class="work-metrics">
+              <div class="metric">
+                <strong>Once</strong>
+                <span>One post, every channel</span>
+              </div>
+              <div class="metric">
+                <strong>FB · IG</strong>
+                <span>Live, incl. video · more next</span>
+              </div>
+              <div class="metric">
+                <strong>Yours</strong>
+                <span>Your accounts, your audience</span>
+              </div>
+            </div>
+            <a href="#contact" class="worklink">Ask about early access <span class="arrow">→</span></a>
+          </article>
         </div>
       </div>
     </section>
@@ -1042,29 +1080,29 @@
         <div class="section-head">
           <span class="eyebrow">How PUSH AI builds</span>
           <h2 class="h2">Speed is cheap now.<br>Discipline is the product.</h2>
-          <p class="lead">Every agency now says it uses AI. Google's 2025 DORA study of nearly 5&nbsp;000 practitioners found AI makes teams ship faster — and break more. "AI doesn't fix a team; it amplifies what's already there." That's why a seasoned delivery lead sits on every gate: it's what turns fast tooling into software you can run a business on.</p>
+          <p class="lead">Every agency now says it uses AI. Google's 2025 study of nearly 5&nbsp;000 software teams found AI makes them ship faster — and break more. "AI doesn't fix a team; it amplifies what's already there." So the method matters more than the tool. Ours has four steps, and you can see where you are in every one of them.</p>
         </div>
 
         <div class="process-grid">
           <div class="process-step">
             <div class="process-num">01</div>
             <h3>Scope</h3>
-            <p>A free 90-minute session maps where you're losing hours to manual work. You leave with a written scope and an honest date — whether or not you build it with us.</p>
+            <p>A free 90-minute conversation about where your week goes. We write down, in plain language, what the system must do — your words, not ours — with a price and a date. It's yours to keep, whether or not you build with us.</p>
           </div>
           <div class="process-step">
             <div class="process-num">02</div>
             <h3>Build</h3>
-            <p>You sign off the user stories in plain language before a sprint starts. AI does the heavy lifting; every change is reviewed by a human before it goes near your live system, with explicit stop points.</p>
+            <p>We build in short rounds of about two weeks. Before each round you approve exactly what it will deliver; at the end you see it working. AI writes most of the code; a person reads every change before it goes anywhere near your live system.</p>
           </div>
           <div class="process-step">
             <div class="process-num">03</div>
             <h3>Verify</h3>
-            <p>A success message isn't evidence. Database state, the deployed version and real data are checked before anything is called done.</p>
+            <p>"It works on my screen" doesn't count. We check the real data, on the real system, with your people using it, before anything is called done — and we show you the evidence.</p>
           </div>
           <div class="process-step">
             <div class="process-num">04</div>
             <h3>Hand over</h3>
-            <p>Live on the date we named. Then code, repository, credentials and documentation are yours — with logging in place from day one, so the next process plugs in without a rewrite.</p>
+            <p>Live on the date we named, with your team trained on it. The code, the logins and the documentation are yours — no lock-in. And because the system records what happens from day one, the next thing you need builds on top, not from scratch.</p>
           </div>
         </div>
 
@@ -1079,7 +1117,7 @@
           </div>
           <div class="stat-item">
             <strong>Day one</strong>
-            <span>Event logging and status timestamps built in</span>
+            <span>Your system keeps its own records, from the first release</span>
           </div>
           <div class="stat-item">
             <strong>100%</strong>
@@ -1097,10 +1135,10 @@
             <span class="eyebrow">The founder</span>
             <h2 class="h2" style="margin: 14px 0 20px;">Who PUSH AI is.</h2>
             <p class="lead" style="margin-bottom: 20px;">
-              PUSH AI is an AI-augmented software delivery practice founded and run by Len Klopper — twenty-plus years of IT project management and Scrum Master work, now applied to a new model: senior delivery discipline steering AI development tooling. Based in South Africa, building for SMEs across South Africa and Africa.
+              PUSH AI is an AI-augmented software delivery practice founded and run by Len Klopper — twenty-plus years of IT project management and Scrum Master work across banking, insurance, telecoms and retail, now applied to a new model: senior delivery discipline steering AI development tooling. Based in South Africa, building for SMEs in any industry, across South Africa and Africa.
             </p>
             <p class="lead" style="margin-bottom: 20px;">
-              It's senior-led by design. The person who scopes your system is the person who gates every change before it goes live, and answers the phone afterwards. No account managers, no hand-offs, no one to chase. And every build is ML-first: it records what happened, when, and how it turned out from day one, so your system quietly gets smarter over time without a rebuild.
+              It's senior-led by design. The person who scopes your system is the person who gates every change before it goes live, and answers the phone afterwards. No account managers, no hand-offs, no one to chase. And every build is machine-learning first: it records what happened, when, and how it turned out from day one, so your system is AI-ready the moment you want it to be — without a rebuild.
             </p>
             <!-- Optional: remove the line below to keep the name story off the site -->
             <p class="lead">The name is the founder's story: PUSH — Pray Until Something Happens. Proverbs 16:3 — commit the work, and the plans are established.</p>
@@ -1111,7 +1149,7 @@
               <div class="timeline-year">2000s</div>
               <div>
                 <h4>Delivery management</h4>
-                <p>Project management and Scrum Master roles on corporate systems — the discipline that now sits on every review gate.</p>
+                <p>Project management and Scrum Master roles on corporate systems in banking, insurance, telecoms and retail — the discipline that now sits on every review gate.</p>
               </div>
             </div>
             <div class="timeline-item">
@@ -1125,14 +1163,14 @@
               <div class="timeline-year">2024–26</div>
               <div>
                 <h4>PUSH AI</h4>
-                <p>AI-augmented development for African SMEs: an operations system for a fabrication business, a dealership platform, an online store, a content-distribution platform.</p>
+                <p>AI-augmented development for SMEs: an operations system for a fabrication business, a dealership platform, an online store, a content-distribution platform — the first of many industries.</p>
               </div>
             </div>
             <div class="timeline-item">
               <div class="timeline-year">Now</div>
               <div>
                 <h4>The next process</h4>
-                <p>Quoting, job cards, stock, bookings — one at a time, logged from day one so each system can start learning later.</p>
+                <p>Quoting, work tracking, stock, bookings, portals — one process at a time, for whatever business you run, logged from day one so each system can start learning later.</p>
               </div>
             </div>
           </div>
@@ -1149,22 +1187,42 @@
         </div>
         <div class="stack-grid">
           <div class="stack-group">
+            <h4>Languages</h4>
+            <div class="stack-tags">
+              <span class="tag">Java</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+          <div class="stack-group">
             <h4>Frontend</h4>
             <div class="stack-tags">
               <span class="tag">React</span>
-              <span class="tag">TypeScript</span>
               <span class="tag">Vite</span>
               <span class="tag">Tailwind</span>
+              <span class="tag">PWA — no app store needed</span>
             </div>
           </div>
           <div class="stack-group">
             <h4>Backend &amp; data</h4>
             <div class="stack-tags">
-              <span class="tag">Supabase</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Row-level security</span>
               <span class="tag">Spring Boot</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Supabase</span>
               <span class="tag">MySQL</span>
+              <span class="tag">Row-level security</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <h4>Platform</h4>
+            <div class="stack-tags">
+              <span class="tag">AWS</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Docker</span>
+              <span class="tag">GitHub</span>
             </div>
           </div>
           <div class="stack-group">
@@ -1172,13 +1230,6 @@
             <div class="stack-tags">
               <span class="tag">Claude</span>
               <span class="tag">Claude Code</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>Platform</h4>
-            <div class="stack-tags">
-              <span class="tag">AWS</span>
-              <span class="tag">PWA — no app store needed</span>
             </div>
           </div>
           <div class="stack-group">
@@ -1203,19 +1254,19 @@
         <div class="principles-grid">
           <div class="principle">
             <h3>&lt; You approve before we build /&gt;</h3>
-            <p>Every sprint starts with user stories in plain language, signed off by you. Not developer shorthand.</p>
+            <p>Before each build round, you sign off — in your own words — exactly what it will deliver and what "done" looks like. No developer shorthand, no surprises.</p>
           </div>
           <div class="principle">
             <h3>&lt; Nothing reaches production unread /&gt;</h3>
-            <p>Every change is reviewed by a human before it goes near your live system, with explicit stop points along the way.</p>
+            <p>Every change is reviewed by a human before it goes near your live system, and we stop and show you our work at set points along the way.</p>
           </div>
           <div class="principle">
             <h3>&lt; Verified, never assumed /&gt;</h3>
             <p>A success message isn't evidence. Database, deployed version, real data — checked before anything is called done.</p>
           </div>
           <div class="principle">
-            <h3>&lt; Built to learn from day one /&gt;</h3>
-            <p>Every build is ML-first: event logging, status timestamps and outcome tracking from the first release. Your system doesn't just run the business — it accumulates the data that lets it get smarter later, without a rewrite.</p>
+            <h3>&lt; Machine Learning first /&gt;</h3>
+            <p>From the first release your system records what happened, when, and how it turned out — the clean, structured data machine learning runs on. So when you're ready for forecasting, automation or an AI assistant that knows your business, it plugs in on top. No rebuild, no starting over.</p>
           </div>
           <div class="principle">
             <h3>&lt; We name the date, then keep it /&gt;</h3>
@@ -1238,7 +1289,7 @@
           Ninety minutes. No cost, no obligation. We map where your business is losing time to manual work, and you leave with a written scope and an honest date — whether or not you build it with us.
         </p>
         <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <!-- TODO: WhatsApp link is wired in the script below once WHATSAPP_NUMBER is set; until then it falls back to email -->
+          <!-- WhatsApp link is wired in the script below (WHATSAPP_NUMBER) -->
           <a href="mailto:lenklopper03@gmail.com" class="btn btn-primary" data-wa>WhatsApp Len <span class="arrow">→</span></a>
           <!-- TODO: swap the personal Gmail for a business address once the domain is live -->
           <a href="mailto:lenklopper03@gmail.com" class="btn btn-ghost">Email Len</a>
@@ -1262,7 +1313,7 @@
         <div class="faq-list">
           <div class="faq-item">
             <div class="faq-q">What do you actually build?</div>
-            <p class="faq-a">Real production systems that solve a business problem: operations and job tracking, quoting, stock, bookings, enquiry capture, customer records, online stores. Industry-neutral — fabrication shops, dealerships, online retail, services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite.</p>
+            <p class="faq-a">Real production systems that solve a business problem: operations and work tracking, quoting, stock, bookings, enquiry capture, customer records, online stores, client portals, reporting. Any industry — workshops, dealerships, retail, clinics, agencies, logistics, professional services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite.</p>
           </div>
           <div class="faq-item">
             <div class="faq-q">What does it cost?</div>
@@ -1308,7 +1359,7 @@
     // WhatsApp links — set the number once (digits only, international format, e.g. '27821234567')
     // and every element with data-wa becomes a wa.me link. Until then they fall back to email / the contact section.
     (function () {
-      const WHATSAPP_NUMBER = '';
+      const WHATSAPP_NUMBER = '27688963349';
       const WHATSAPP_TEXT = "Hi Len, I'd like to book a scoping session.";
       if (!WHATSAPP_NUMBER) return;
       const href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_TEXT);
