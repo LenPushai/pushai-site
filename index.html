@@ -3,10 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PUSH AI — Custom business software for SMEs | South Africa</title>
-  <meta name="description" content="PUSH AI solves business problems with software: real production systems for SMEs in any industry across South Africa and Africa, built with AI-augmented delivery, gated by a senior delivery lead, at 20–30% below agency pricing. Free 90-minute scoping session." />
-  <meta property="og:title" content="PUSH AI — Tell us the problem. We build the fix." />
-  <meta property="og:description" content="Custom business software for SMEs across South Africa and Africa — live in real businesses today, at 20–30% below agency pricing. Free 90-minute scoping session." />
+  <title>Jobbook by PUSH AI — Workshop software for fabrication &amp; engineering, Gauteng and South Africa</title>
+  <meta name="description" content="Jobbook is the operations system for fabrication and engineering workshops: RFQ board, quoting, supplier prices, purchase orders at the quoted ceiling, job cards and the shop floor, receiving and job cost — with Pastel staying your book of record. Built on a workshop floor in the Vaal Triangle; serving Gauteng, the rest of South Africa and, next, Africa." />
+  <meta property="og:image" content="https://pushai.co.za/img/rfq-board.png" />
+    <meta property="og:image:width" content="1480" />
+    <meta property="og:image:height" content="785" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://pushai.co.za/img/rfq-board.png" />
+    <meta property="og:title" content="Jobbook — from the enquiry to the invoice. One system for the workshop." />
+  <meta property="og:description" content="The blue book at the counter, on a screen. Quoting, supplier prices, orders at the quoted ceiling, the shop floor, job cost. Built with a Vaal Triangle fabricator, in production." />
   <link rel="canonical" href="https://pushai.co.za/" />
   <meta property="og:url" content="https://pushai.co.za/" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -17,7 +22,7 @@
   <meta property="og:site_name" content="PUSH AI" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="geo.region" content="ZA-GP" />
-  <meta name="geo.placename" content="Vaal Triangle, South Africa" />
+  <meta name="geo.placename" content="Henley on Klip, Vaal Triangle, South Africa" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -684,17 +689,52 @@
     }
     .footer-links { display: flex; gap: 20px; }
     .footer-links a:hover { color: var(--text-strong); }
-  </style>
-  <script type="application/ld+json">
-{
+  
+    /* what goes away */
+    .replace-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    .replace-table th, .replace-table td { text-align: left; vertical-align: top; padding: 16px 14px; border-bottom: 1px solid var(--rule); font-size: 15px; line-height: 1.55; }
+    .replace-table th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+    .replace-table td:first-child { font-family: var(--font-mono); font-size: 12px; color: var(--accent); white-space: nowrap; }
+    .replace-table td.today { color: var(--text-muted); }
+    .replace-table td.after { color: var(--text-strong); }
+    .replace-table td.after strong { color: var(--accent); font-weight: 600; }
+    @media (max-width: 760px) {
+      .replace-table thead { display: none; }
+      .replace-table tr { display: block; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+      .replace-table td { display: block; border: 0; padding: 4px 0; }
+      .replace-table td.today::before { content: "Today  "; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); letter-spacing: .1em; text-transform: uppercase; }
+      .replace-table td.after::before { content: "On the system  "; font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; }
+    }
+
+    .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
+    .shot { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--surface-1); }
+    .shot .ph { aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); background: var(--surface-2); letter-spacing: .08em; }
+    .shot img { width: 100%; display: block; }
+    .shot figcaption { padding: 12px 14px; font-size: 14px; line-height: 1.5; color: var(--text-body); }
+    .shot figcaption strong { color: var(--text-strong); }
+    .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
+    .price { border: 1px solid var(--rule); border-radius: 12px; padding: 26px; background: var(--surface-1); }
+    .price .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+    .price .v { font-size: 34px; font-weight: 700; color: var(--text-strong); margin: 8px 0 4px; letter-spacing: -.02em; }
+    .price .v small { font-size: 15px; font-weight: 500; color: var(--text-muted); }
+    .price ul { margin: 14px 0 0; padding-left: 18px; color: var(--text-body); font-size: 15px; line-height: 1.6; }
+    .mods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
+    .mod { border: 1px solid var(--rule); border-radius: 10px; padding: 16px 18px; background: var(--surface-1); }
+    .mod .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); }
+    .mod .k.b { color: var(--text-muted); }
+    .mod h3 { font-size: 17px; margin: 8px 0 6px; color: var(--text-strong); }
+    .mod p { font-size: 14px; line-height: 1.55; color: var(--text-body); margin: 0; }
+    @media (max-width: 860px) { .shots, .mods { grid-template-columns: 1fr; } .price-grid { grid-template-columns: 1fr; } }
+</style>
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": "https://pushai.co.za/#business",
   "name": "PUSH AI",
   "alternateName": "Push AI",
-  "description": "AI-augmented software delivery practice. Real production systems that solve business problems for SMEs across South Africa and Africa — operations and job tracking, quoting, stock, bookings, enquiry capture, customer records and online stores — at 20–30% below agency pricing.",
+  "description": "The operations system for fabrication and engineering workshops: front office, quoting, procurement, shop floor, dispatch and invoicing, with Pastel as book of record. Built with a Vaal Triangle fabricator, live in production. Serving Meyerton, Vereeniging, Vanderbijlpark, Sasolburg and South Africa.",
   "url": "https://pushai.co.za/",
-  "email": "lenklopper03@gmail.com",
+  "email": "len@pushai.co.za",
   "founder": {
     "@type": "Person",
     "name": "Len Klopper",
@@ -711,173 +751,203 @@
   },
   "areaServed": [
     {
-      "@type": "Country",
-      "name": "South Africa"
+      "@type": "Place",
+      "name": "Vaal Triangle"
     },
     {
-      "@type": "Continent",
-      "name": "Africa"
+      "@type": "Place",
+      "name": "Meyerton"
+    },
+    {
+      "@type": "Place",
+      "name": "Vereeniging"
+    },
+    {
+      "@type": "Place",
+      "name": "Vanderbijlpark"
+    },
+    {
+      "@type": "Place",
+      "name": "Sasolburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Heidelberg"
+    },
+    {
+      "@type": "Place",
+      "name": "Alberton"
+    },
+    {
+      "@type": "Place",
+      "name": "Johannesburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Pretoria"
+    },
+    {
+      "@type": "Place",
+      "name": "Ekurhuleni"
+    },
+    {
+      "@type": "Place",
+      "name": "Gauteng"
+    },
+    {
+      "@type": "Place",
+      "name": "South Africa"
     }
   ],
   "knowsAbout": [
+    "Fabrication workshop software",
+    "Engineering job shop software",
+    "RFQ and quoting systems",
+    "Procurement and purchase orders",
+    "Shop floor job cards",
+    "Pastel Partner integration",
     "Custom business software",
-    "Job card systems",
-    "Quoting software",
-    "Stock control",
-    "Booking systems",
-    "Enquiry capture",
-    "AI-augmented software development"
+    "React",
+    "PostgreSQL",
+    "AWS"
   ],
   "priceRange": "$$",
-  "slogan": "Tell us the problem. We build the fix.",
-  "makesOffer": {
-    "@type": "Offer",
-    "name": "Free 90-minute scoping session",
-    "price": "0",
-    "priceCurrency": "ZAR"
-  },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "What we build",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Quotes & proposals"
-        }
+  "slogan": "Jobbook — from the enquiry to the invoice.",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "SoftwareApplication",
+        "name": "Jobbook",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Operations system for fabrication and engineering workshops: RFQ board, quoting, supplier price requests, purchase orders at the quoted ceiling, job cards and shop floor, receiving and job cost. Pastel stays the book of record."
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Work tracking"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Reports & dashboards"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Bookings & scheduling"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Enquiries & leads"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Customers & documents"
-        }
+      "priceCurrency": "ZAR",
+      "price": "25000",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "25000",
+        "priceCurrency": "ZAR",
+        "description": "Setup from R25 000 once; running from R3 500 per month per workshop"
       }
-    ]
-  }
-}
-  </script>
-  <script type="application/ld+json">
-{
+    }
+  ]
+}</script>
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What do you actually build?",
+      "name": "We run on Pastel. Does Jobbook replace it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Real production systems that solve a business problem: operations and work tracking, quoting, stock, bookings, enquiry capture, customer records, online stores, client portals, reporting. Any industry — workshops, dealerships, retail, clinics, agencies, logistics, professional services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite."
+        "text": "No. Pastel stays your book of record for quotes, POs and invoices. Jobbook does everything in front of Pastel — the enquiry, the material list, the supplier prices, the order at the quoted ceiling, the shop floor — and hands Pastel the lines in its own column order. PO and invoice numbers are typed back so the job and the paperwork sit together."
       }
     },
     {
       "@type": "Question",
-      "name": "What does it cost?",
+      "name": "It's one person. What if he disappears?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It's scoped and priced in writing in the free session, before anything is built — so you know the number up front. Because the build is AI-augmented and there's no agency overhead to carry, PUSH AI comes in 20–30% below traditional agency pricing, with faster delivery."
+        "text": "The hosting is in your name, the code is in your repository, the documentation is in your drive, and every screen is standard React and PostgreSQL. Any competent developer picks it up in a day. That is deliberate: Jobbook is built so you never depend on PUSH AI to keep running."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does it take?",
+      "name": "Our people aren't computer people.",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "First builds are scoped small enough to ship in weeks, not quarters. The date comes from real engineering capacity, not sales pressure — and once it's confirmed to you, it's kept."
+        "text": "Neither were the people it was built with. Each screen is shaped with the person who does that job, on a test copy, before it goes live: the buyer's screen with the buyer, the foreman's board with the foreman. Big buttons, plain words, in the language the floor speaks, and nothing you can break by pressing."
       }
     },
     {
       "@type": "Question",
-      "name": "Who actually does the work?",
+      "name": "Our suppliers are in a spreadsheet one person keeps.",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A small, senior-led practice. Len scopes your system, gates every change before it goes live, and answers the phone afterwards. AI development tooling does the heavy lifting under that gate — no account manager between you and the person accountable for the build."
+        "text": "That's where every workshop starts. The last import took 283 suppliers from one spreadsheet into a register grouped the way the buyer thinks, with every change logged. Her own words for each supplier stayed next to the group."
       }
     },
     {
       "@type": "Question",
-      "name": "Do I own what you build?",
+      "name": "How long until we're on it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Everything. Code, repository, credentials and handover documentation are yours. If we part ways, you take all of it with you."
+        "text": "Front office and Quoting go live in weeks, not quarters. Your suppliers, clients, people and forms are loaded for you. Each further module is a two-week sprint, in the order your own work demands. The date comes from real capacity, and once confirmed it holds."
       }
     },
     {
       "@type": "Question",
-      "name": "You use AI to build it — is that safe?",
+      "name": "Can we start with just one part?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "AI does the heavy lifting. A delivery lead with twenty years behind him reviews every change before it reaches your live system, and nothing is called done until the database and real data say so. \"Done means done, verified with evidence.\" Speed from the AI, safety from the gate."
+        "text": "Yes. Most workshops start with Quoting and Procurement, because that is where the money leaks — prices that went stale between quote and order. The shop floor follows when the office is settled."
       }
     },
     {
       "@type": "Question",
-      "name": "What about load-shedding and patchy signal?",
+      "name": "We're not in the Vaal. Does that matter?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Systems are built to keep working on a phone with unreliable signal, to notify your team over WhatsApp, and to run on hosting chosen for reliability rather than fashion."
+        "text": "No. Jobbook runs in the browser and is hosted on AWS, so a workshop in Pretoria, Durban or Cape Town runs it the same way. The scoping morning is in person across the Vaal and Gauteng and on screen everywhere else; the test copy, the walk-through and the training work the same either way. Africa is next on the map."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Phones and tablets on the floor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and nothing to install. Jobbook runs in the browser, so the owner sees the boards and approves what's waiting from his phone, in the bakkie or at home. The shop runs on one tablet per bay — the foreman's board, clock-ins, QC and \"ready\" — rather than a device per person, so a R3 000 tablet and a screen protector does a bay. The office keeps the PC for quoting, prices and orders. Same system, same job, three screens."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Load-shedding and no signal on site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Built to keep working on a phone with unreliable signal, to notify the team over WhatsApp, and hosted on AWS with daily backups. When the power comes back, so does the office — nothing in a book that got left at the counter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why \"PUSH AI\" if the page never mentions AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the AI isn't the product; the blue book on a screen is. Two places it sits: behind the scenes, where AI tooling builds Jobbook fast under a human gate — and ahead of you, where Jobbook records every job, price and clock-in from day one so that, after a few months, it can tell you which quotes you'll win, how long a job really takes and which supplier will be late. No rebuild, no data science project. It's just ready when you are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who builds it, and is AI involved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PUSH AI is a senior-led practice: Len Klopper, who ran delivery for Nedbank, Discovery, Investec and MTN, now applied to one trade. AI development tooling does the heavy lifting under that gate; a person reads every change before it reaches your live system, and nothing is called done until it has been walked as every role on the test copy."
       }
     }
   ]
-}
-  </script>
+}</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAV -->
   <header class="nav">
     <div class="container nav-inner">
       <a href="/" class="logo">PUSH<span>AI</span></a>
       <nav class="navlinks">
-        <a class="navlink" href="#services">What we build</a>
-        <a class="navlink" href="#work">Proof</a>
-        <a class="navlink" href="#process">How we build</a>
-        <a class="navlink" href="#about">About</a>
+        <a class="navlink" href="#replace">What goes away</a>
+        <a class="navlink" href="#modules">Modules</a>
+        <a class="navlink" href="#price">Price</a>
+        <a class="navlink" href="#proof">Proof</a>
         <a class="navlink" href="#faq">FAQ</a>
       </nav>
       <div class="nav-actions">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light / dark mode" title="Toggle theme">
-          <!-- sun icon (shown in dark mode) -->
-          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <circle cx="12" cy="12" r="5"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-          <!-- moon icon (shown in light mode) -->
-          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a href="#contact" class="btn btn-primary btn-sm"><span class="nav-cta-long">Book a scoping session →</span><span class="nav-cta-short">Book a session →</span></a>
+        <a href="#contact" class="btn btn-primary btn-sm" data-wa><span class="nav-cta-long">See it in 15 minutes →</span><span class="nav-cta-short">See it →</span></a>
       </div>
     </div>
   </header>
@@ -887,395 +957,223 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">AI-augmented software delivery · South Africa</span>
-          <h1 class="h1">Tell us the problem.<br><em>We build the fix.</em></h1>
+          <span class="eyebrow">Jobbook · for fabrication &amp; engineering workshops · Vaal Triangle · Gauteng · South Africa</span>
+          <h1 class="h1">Jobbook.<br>From the enquiry<br><em>to the invoice.</em></h1>
           <p class="hero-lead">
-            PUSH AI solves business problems with software — real production systems that run your operations, for any business that could never afford an agency build. AI does the heavy lifting; a senior delivery lead reviews every change before it goes live.
+            The blue book at the counter, on a screen. Every link in the chain — the front office, the quoter, the buyer, the foreman, dispatch, month-end — working in one system instead of six books that don't talk to each other. The owner runs it from his phone; the foreman from a tablet in the bay; Pastel stays your book of record. Built on a fabrication floor in the Vaal Triangle, in production today. Now rolling out across Gauteng and South Africa.
           </p>
           <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary">Book a free scoping session <span class="arrow">→</span></a>
-            <a href="#work" class="btn btn-ghost">See the work first</a>
+            <a href="#contact" class="btn btn-primary" data-wa>See it in 15 minutes <span class="arrow">→</span></a>
+            <a href="#replace" class="btn btn-ghost">What goes away</a>
           </div>
           <div class="hero-stats">
-            <div><strong>Live</strong> in real SA businesses</div>
-            <div><strong>20–30%</strong> below agency pricing</div>
-            <div><strong>Dates</strong> named, then kept</div>
+            <div><strong>Every link in the chain</strong> on one screen</div>
+            <div><strong>283 suppliers</strong> loaded in one import</div>
+            <div><strong>Learns</strong> your workshop from day one</div>
           </div>
         </div>
 
-        <!-- Owner's report: the numbers every business recognises. Fictional but realistic. -->
-        <div class="terminal" aria-hidden="true">
+        <div class="terminal" aria-hidden="true" style="padding:0;overflow:hidden;">
           <div class="terminal-bar">
-            <span class="terminal-dot r"></span>
-            <span class="terminal-dot y"></span>
-            <span class="terminal-dot g"></span>
-            <span class="terminal-title">your business — this month</span>
+            <span class="terminal-dot r"></span><span class="terminal-dot y"></span><span class="terminal-dot g"></span>
+            <span class="terminal-title">Jobbook · RFQ board · practice data</span>
           </div>
-          <div class="terminal-body" style="padding-top: 18px;">
-            <div class="dash-tiles">
-              <div class="dash-tile"><div class="k">Sales</div><div class="v">R412 000</div><div class="d up">▲ 12% vs last month</div></div>
-              <div class="dash-tile"><div class="k">Gross margin</div><div class="v">31%</div><div class="d up">▲ 2 pts</div></div>
-              <div class="dash-tile"><div class="k">Overdue invoices</div><div class="v">R38 400</div><div class="d warn">5 customers · oldest 41 d</div></div>
-              <div class="dash-tile"><div class="k">Repeat customers</div><div class="v">64%</div><div class="d">of this month's orders</div></div>
-            </div>
-            <div class="dash-foot">from the system that runs your business — not a spreadsheet <span class="cursor"></span></div>
-          </div>
+          <img src="img/rfq-board.png" alt="Jobbook RFQ board: New, With quoter, Awaiting approval, Ready to send, Quote sent, Order won" style="display:block;width:100%;height:auto;" loading="eager" />
+        </div></div>
+      </div>
+    </section>
+
+    <!-- WHAT GOES AWAY -->
+    <section class="section" id="replace">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">What goes away</span>
+          <h2 class="h2">From the blue book to the screen,<br>stage by stage.</h2>
+          <p class="lead">Every workshop has a blue book: the ledger at the counter where the jobs, the deliveries, the clock-ins and what you are still owed get written in pen. Jobbook is that book, and the spreadsheets and paper around it, on one screen — a list made walking the floor with the buyer, the quoter and the foreman. Every line on the right is live or being built with them now.</p>
+        </div>
+        <table class="replace-table">
+          <thead><tr><th>Stage</th><th>Today, in most workshops</th><th>On the system</th></tr></thead>
+          <tbody>
+            <tr><td>01 Enquiry</td>
+              <td class="today">The client's email sits in one inbox. A row typed into an RFQ workbook — fourteen of them, one per year and per person. "Who's quoting this?" asked across the office. A whiteboard of what's out, and the blue book at the counter.</td>
+              <td class="after"><strong>One RFQ board.</strong> Every enquiry, who's on it, what stage, since when. Allocation by name with receipt confirmation. Search across everything, from any phone.</td></tr>
+            <tr><td>02 Quote</td>
+              <td class="today">A paper "quote-only" form with the material list in pen. A photo of it on WhatsApp to the buyer. Prices scribbled in the margin. The cost sheet rebuilt in Excel, then retyped into Pastel.</td>
+              <td class="after"><strong>Material list typed once.</strong> Prices land beside each line, cheapest shaded, one chosen. Cost sheet with margin on the same screen. Copy for Pastel in its column order. Two-stage approval with e-signature.</td></tr>
+            <tr><td>03 Buy</td>
+              <td class="today">A supplier list in one spreadsheet one person keeps. Price requests by phone and email, chased from memory. A paper requisition walked to the MD. A PO printed three times: one for the supplier, one for stores, one filed for month-end.</td>
+              <td class="after"><strong>283 suppliers in groups, one import.</strong> One email per supplier, only its lines, reminders in one click, every open request on one screen. Dated prices that go amber when stale. Buy at or under the quoted price per line; dearer waits for the MD on screen. One PO per supplier.</td></tr>
+            <tr><td>04 Make</td>
+              <td class="today">Job cards photocopied. The job board on a whiteboard, wiped weekly. Clock cards and a casual register in a book. "Where's job 5590?" answered by walking to the shop. QC on a signature.</td>
+              <td class="after"><strong>Job board and workshop board.</strong> Not started → In progress → QC → Complete → Dispatched. Workers and clock-ins per job, time per job, QC holding points, job card PDF. The foreman's tablet, not the whiteboard.</td></tr>
+            <tr><td>05 Receive</td>
+              <td class="today">Delivery notes matched to POs by hand. Short deliveries remembered, or not. Returns and credits on a sticky note. A stock list in Excel nobody trusts.</td>
+              <td class="after"><strong>Open items per order:</strong> ordered, delivered, invoiced, credited, days open. Short deliveries and returns on the row. A stock list that grows as you buy. <em>Building, Nov 2026.</em></td></tr>
+            <tr><td>06 Invoice</td>
+              <td class="today">Month-end: the filed third copy of every PO pulled to work out what the job really cost. Cash-in guessed from quote values and who usually pays late.</td>
+              <td class="after"><strong>Job cost on a screen:</strong> quoted, ordered, invoiced, per job. Cash-in by week from quote values and payment terms. Pastel stays the book; the system does the remembering. <em>Building, Nov 2026.</em></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SCREENS -->
+    <section class="section" id="screens">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The screens</span>
+          <h2 class="h2">Three screens the owner, the buyer and the foreman look at first.</h2>
+        </div>
+        <div class="shots">
+          <figure class="shot">
+            <img src="img/open-requests.png" alt="Open requests: every price request out to a supplier, overdue in red, remind in one click" loading="lazy" />
+            <figcaption><strong>Open requests.</strong> Every price request out to a supplier, on one screen. Overdue in red. Remind in one click. The paper pile, gone.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="img/prices.png" alt="Prices grid: one column per supplier, dated prices, amber when stale, cheapest marked, one chosen per line" loading="lazy" />
+            <figcaption><strong>Prices and the ceiling.</strong> Supplier prices beside each line, cheapest shaded, dated — amber when stale. Order at or under the quote; dearer waits for the MD.</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="img/job-board.png" alt="Workshop board: Not started, In progress, On hold, Quality check, Complete, Dispatched, Delivered" loading="lazy" />
+            <figcaption><strong>The workshop board.</strong> Not started, in progress, QC, complete, dispatched. Who's on it, clocked time, the job card as a PDF. The foreman's tablet, not the whiteboard.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- WHAT WE BUILD -->
-    <section class="section" id="services">
+    <!-- MODULES -->
+    <section class="section" id="modules">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">What we build</span>
-          <h2 class="h2">Start with the problem<br>costing you the most hours.</h2>
-          <p class="lead">Whether you make, sell, move, serve or advise, it usually looks the same: work tracked on WhatsApp, quotes and bookings in spreadsheets, the owner as the bottleneck. We fix one process end to end — scoped in writing, delivered on a date we name — and build it so the next one plugs in.</p>
+          <span class="eyebrow">Six modules</span>
+          <h2 class="h2">Start with the two that hurt most.<br>Add the rest in your order. The seventh builds itself.</h2>
         </div>
+        <div class="mods">
+          <div class="mod"><div class="k">01 · Live</div><h3>Front office</h3><p>RFQ board, client register, quoter allocation with receipt, two-stage approval with e-signature, email at every stage, search.</p></div>
+          <div class="mod"><div class="k">02 · Live</div><h3>Quoting</h3><p>Material list per RFQ. Send for price — one email per supplier, only its lines. Prices in a grid, cheapest shaded. Cost sheet with margin. Copy for Pastel.</p></div>
+          <div class="mod"><div class="k">03 · Live · ordering on test</div><h3>Procurement</h3><p>Supplier register by group. Open requests on one screen, reminders in a click. Dated prices. Orders at or under the quoted ceiling per line. One PO per supplier, Pastel number typed back.</p></div>
+          <div class="mod"><div class="k">04 · Live</div><h3>The shop</h3><p>Job board and workshop board. Workers and clock-ins per job, time per job, QC holding points, dispatch with delivery number, job card PDF. Runs on a tablet in the bay.</p></div>
+          <div class="mod"><div class="k b">05 · Building · Nov 2026</div><h3>Receiving &amp; store</h3><p>Open items per order — ordered, delivered, invoiced, credited, days open. Short deliveries, returns, the buyer's "phone today" tick. Stock list that grows as you buy.</p></div>
+          <div class="mod"><div class="k b">06 · Building · Nov 2026</div><h3>Job cost &amp; cash</h3><p>Per job: quoted, ordered, invoiced. Cash-in by week from quote values and payment terms. Activity log under everything, from day one.</p></div>
+          <div class="mod"><div class="k b">07 · Next</div><h3>Jobbook learns</h3><p>After a few months of your own jobs it starts answering what the blue book never could: which quotes you're likely to win, how long a job like this really takes, which supplier will be late, what the margin was on the last ten jobs like this one. Recording from day one, so it's ready when you are.</p></div>
+        </div>
+      </div>
+    </section>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-num">001</div>
-            <h3>Quotes &amp; proposals</h3>
-            <p>Built from your price list or rate card, sent from the system, and tracked — sent, viewed, accepted, expired. No more "which version did we send?"</p>
-          </article>
-          <article class="service-card">
-            <div class="service-num">002</div>
-            <h3>Work tracking</h3>
-            <p>Every job, case, order or project on one board from start to invoiced. Who's on it, what's due, what's waiting on someone else. Updated from a phone, wherever the work is.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-num">003</div>
-            <h3>Bookings &amp; scheduling</h3>
-            <p>Appointments, call-outs, deliveries and team capacity in one calendar, with reminders sent over WhatsApp so fewer people don't show up.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-num">004</div>
-            <h3>Enquiries &amp; leads</h3>
-            <p>Every enquiry from your website, WhatsApp, phone or social media, logged with where it came from and who followed up — so you know which marketing actually brings in work.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-num">005</div>
-            <h3>Customers &amp; documents</h3>
-            <p>One history per customer or client: quotes, work done, invoices, notes, signed documents. Not scattered across three phones and a shared drive.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-num">006</div>
-            <h3>Reports &amp; dashboards</h3>
-            <p>Sales, margin, overdue invoices, repeat customers — the numbers an owner needs, from the system itself, not retyped into a spreadsheet on Sunday night.</p>
-          </article>
+    <!-- WORKS WITH -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Works with what you already run</span>
+          <h2 class="h2">Pastel stays the book. Jobbook does the remembering.</h2>
         </div>
-        <p class="lead" style="margin: 28px 0 0; max-width: 760px;">Also in scope: stock and orders, online stores, client portals, approval workflows, and links to the accounting package you already use. If it runs your business on spreadsheets and WhatsApp today, it's something we build — in any industry.</p>
+        <div class="stack-grid">
+          <div class="stack-group"><h4>Pastel Partner</h4><div class="stack-tags"><span class="tag">Copy for Pastel — quote lines and POs in Pastel's column order</span><span class="tag">PO and invoice numbers typed back</span><span class="tag">Export-based reconciliation — next</span></div></div>
+          <div class="stack-group"><h4>Jarison clocking</h4><div class="stack-tags"><span class="tag">Clock-number import for casual time — in build</span></div></div>
+          <div class="stack-group"><h4>Email &amp; WhatsApp</h4><div class="stack-tags"><span class="tag">Mail from your own domain (Microsoft 365)</span><span class="tag">Supplier price requests, reminders, approvals</span><span class="tag">WhatsApp for the team and for support</span></div></div>
+          <div class="stack-group"><h4>Any device, no app to install</h4><div class="stack-tags"><span class="tag">Owner's phone — the boards, approvals, search</span><span class="tag">One tablet per bay — the foreman's workshop board, QC and clock-ins</span><span class="tag">Office PC — quoting, prices, orders</span><span class="tag">Works on patchy signal on site</span></div></div>
+          <div class="stack-group"><h4>Hosting</h4><div class="stack-tags"><span class="tag">Hosted in your name on AWS</span><span class="tag">Row-level security — each role sees its own</span><span class="tag">Backed up daily</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO ELSE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Who else does this?</span>
+          <h2 class="h2">Pastel starts when you've decided to buy.<br>Jobbook is everything before that.</h2>
+          <p class="lead">Accounting packages begin when the money moves. Overseas job-shop tools don't know Pastel and don't come to your floor. Nobody else sends the price requests, chases the slow ones, lines the prices up dated, and holds the order to the quote. Jobbook does — and then hands Pastel the lines. And because every job, price and clock-in is recorded from day one, it's the only one that gets smarter with your workshop.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICE -->
+    <section class="section" id="price">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Price</span>
+          <h2 class="h2">Two numbers. No surprises.</h2>
+          <p class="lead">Quoted in writing before anything is built. The date is named, then kept.</p>
+        </div>
+        <div class="price-grid">
+          <div class="price">
+            <div class="k">Setup · once</div>
+            <div class="v">from R 25 000</div>
+            <ul>
+              <li>Front office and Quoting live in your workshop</li>
+              <li>Your suppliers, clients, people and forms loaded for you</li>
+              <li>Your team trained on your own jobs, at your counter</li>
+              <li>Each further module scoped and priced as a two-week sprint</li>
+            </ul>
+          </div>
+          <div class="price">
+            <div class="k">Running · monthly</div>
+            <div class="v">from R 3 500 <small>/ month per workshop</small></div>
+            <ul>
+              <li>Hosting, backups, mail, security updates</li>
+              <li>Support on WhatsApp — the person who built it answers</li>
+              <li>Unlimited users — the MD, the buyer, the foreman, the floor</li>
+              <li>Cancel with a month's notice; you keep your data and the code</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PROOF -->
-    <section class="section" id="work">
+    <section class="section" id="proof">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Proof, not promises</span>
-          <h2 class="h2">Live in real businesses today.</h2>
-          <p class="lead">Not prototypes. Not slideware. The first builds happen to be in fabrication, automotive and retail; the method is the same for a clinic, an agency, a logistics firm or a law practice. Client names are withheld until each has signed off on being named; the systems and outcomes are real, and walkthroughs are available on request.</p>
+          <h2 class="h2">In production on a workshop floor,<br>every link in the chain.</h2>
+          <p class="lead">Built with a fabrication and construction company in the Vaal Triangle, stage by stage, from their own Excel workbooks and paper forms. In daily use in the office, in procurement and on the shop floor. The client's name follows once it is in writing; a walkthrough is available on request.</p>
         </div>
-
         <div class="work-grid">
           <article class="work-card">
-            <div class="work-tag">Operations · Steel fabrication · In production</div>
-            <h3>Operations system for a fabrication business</h3>
-            <p>
-              Quoting, job tracking, staff roles and notifications — replacing WhatsApp threads and a spreadsheet one person kept in their head. In daily use on the workshop floor and in the office.
-            </p>
+            <div class="work-tag">Fabrication &amp; construction · Vaal Triangle · In production</div>
+            <h3>Stage by stage, on their floor</h3>
+            <p>Started as an RFQ board replacing fourteen spreadsheets. Now the front office, quoting, the supplier register, price requests and the shop floor are live; the order and receiving screens are being shaped with the buyer on a test copy before they go live. Every release walked as every role, promoted on the date, with a rollback ready.</p>
             <div class="work-metrics">
-              <div class="metric">
-                <strong>Daily</strong>
-                <span>Production use</span>
-              </div>
-              <div class="metric">
-                <strong>Logged</strong>
-                <span>Every status, timestamped</span>
-              </div>
-              <div class="metric">
-                <strong>Yours</strong>
-                <span>Git, migrations, docs</span>
-              </div>
+              <div class="metric"><strong>14</strong><span>Spreadsheets replaced</span></div>
+              <div class="metric"><strong>283</strong><span>Suppliers, 40 groups, one import</span></div>
+              <div class="metric"><strong>4 days</strong><span>Early on the last release</span></div>
             </div>
-            <a href="#contact" class="worklink">Discuss a similar system <span class="arrow">→</span></a>
+            <a href="#contact" class="worklink" data-wa>Ask for a walkthrough <span class="arrow">→</span></a>
           </article>
-
           <article class="work-card">
-            <div class="work-tag">Dealership · Automotive · Delivered</div>
-            <h3>Stock and enquiry platform for a used-car dealership</h3>
-            <p>
-              Vehicle stock, enquiry capture and lead-source tracking, so the owner can see which listings and channels actually bring buyers in. Delivered to production with client-owned credentials from day one.
-            </p>
+            <div class="work-tag">What the buyer said</div>
+            <h3>"I have to stay inside the quoted amount."</h3>
+            <p>The job is won two or three weeks after the quote. The supplier who had stock no longer does. She re-sources at or under the quoted price, chases what is late, matches delivery notes to orders, and files the third copy of every PO so month-end can see what the job really cost. That is Jobbook: it remembers what she is owed, so she doesn't have to.</p>
             <div class="work-metrics">
-              <div class="metric">
-                <strong>Delivered</strong>
-                <span>To production</span>
-              </div>
-              <div class="metric">
-                <strong>Leads</strong>
-                <span>Source tracked</span>
-              </div>
-              <div class="metric">
-                <strong>Owned</strong>
-                <span>Client holds every credential</span>
-              </div>
+              <div class="metric"><strong>One screen</strong><span>Every open price request</span></div>
+              <div class="metric"><strong>Per line</strong><span>Buy at or under the quote</span></div>
+              <div class="metric"><strong>Logged</strong><span>Every change, who and when</span></div>
             </div>
-            <a href="#contact" class="worklink">Discuss a similar system <span class="arrow">→</span></a>
-          </article>
-
-          <article class="work-card">
-            <div class="work-tag">E-commerce · Retail · In build</div>
-            <h3>Online store for a specialist product business</h3>
-            <p>
-              Storefront, catalogue and owner admin panel — with the full product catalogue migrated off a legacy WordPress site rather than retyped. Built so the owner runs it from a phone, not a developer.
-            </p>
-            <div class="work-metrics">
-              <div class="metric">
-                <strong>Migrated</strong>
-                <span>Catalogue carried over intact</span>
-              </div>
-              <div class="metric">
-                <strong>Owner-run</strong>
-                <span>Admin panel, no developer needed</span>
-              </div>
-              <div class="metric">
-                <strong>Owned</strong>
-                <span>Code, repo, credentials</span>
-              </div>
-            </div>
-            <a href="#contact" class="worklink">Discuss a similar system <span class="arrow">→</span></a>
-          </article>
-
-          <article class="work-card">
-            <div class="work-tag">Content · PUSH AI product · In build</div>
-            <h3>Sower — sow once, grow everywhere</h3>
-            <p>
-              Our own platform. Write a post once — a new product, a special, a job done — and Sower publishes it to every channel a business runs, from one screen, under the business's own accounts. Facebook and Instagram are live today, photos and video; each platform reports back on its own, so a failed post never hides behind a green tick. TikTok, WhatsApp broadcasts and your website feed are next.
-            </p>
-            <div class="work-metrics">
-              <div class="metric">
-                <strong>Once</strong>
-                <span>One post, every channel</span>
-              </div>
-              <div class="metric">
-                <strong>FB · IG</strong>
-                <span>Live, incl. video · more next</span>
-              </div>
-              <div class="metric">
-                <strong>Yours</strong>
-                <span>Your accounts, your audience</span>
-              </div>
-            </div>
-            <a href="#contact" class="worklink">Ask about early access <span class="arrow">→</span></a>
+            <a href="#screens" class="worklink">See the screens <span class="arrow">→</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- HOW WE BUILD -->
+    <!-- HOW IT GETS IN -->
     <section class="section" id="process">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">How PUSH AI builds</span>
-          <h2 class="h2">Speed is cheap now.<br>Discipline is the product.</h2>
-          <p class="lead">Every agency now says it uses AI. Google's 2025 study of nearly 5&nbsp;000 software teams found AI makes them ship faster — and break more. "AI doesn't fix a team; it amplifies what's already there." So the method matters more than the tool. Ours has four steps, and you can see where you are in every one of them.</p>
+          <span class="eyebrow">How it gets into your workshop</span>
+          <h2 class="h2">Four steps. You see where you are in every one.</h2>
         </div>
-
         <div class="process-grid">
-          <div class="process-step">
-            <div class="process-num">01</div>
-            <h3>Scope</h3>
-            <p>A free 90-minute conversation about where your week goes. We write down, in plain language, what the system must do — your words, not ours — with a price and a date. It's yours to keep, whether or not you build with us.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-num">02</div>
-            <h3>Build</h3>
-            <p>We build in short rounds of about two weeks. Before each round you approve exactly what it will deliver; at the end you see it working. AI writes most of the code; a person reads every change before it goes anywhere near your live system.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-num">03</div>
-            <h3>Verify</h3>
-            <p>"It works on my screen" doesn't count. We check the real data, on the real system, with your people using it, before anything is called done — and we show you the evidence.</p>
-          </div>
-          <div class="process-step">
-            <div class="process-num">04</div>
-            <h3>Hand over</h3>
-            <p>Live on the date we named, with your team trained on it. The code, the logins and the documentation are yours — no lock-in. And because the system records what happens from day one, the next thing you need builds on top, not from scratch.</p>
-          </div>
+          <div class="process-step"><div class="process-num">01</div><h3>Fifteen minutes on WhatsApp</h3><p>You see Jobbook end to end — enquiry to dispatch — on your phone, with practice data. If it's not for you, that's the end of it.</p></div>
+          <div class="process-step"><div class="process-num">02</div><h3>A morning on your floor</h3><p>Free. We walk the paper — the requisition, the quote form, the PO printed three times — and write down, in your words, what Jobbook must do for you, with a price and a date.</p></div>
+          <div class="process-step"><div class="process-num">03</div><h3>Your people try it first</h3><p>Your suppliers, clients and forms are loaded. The buyer, the quoter and the foreman use it on a test copy, with practice data and test mail, and tell us what's wrong. Every release is walked as every role before it's called done.</p></div>
+          <div class="process-step"><div class="process-num">04</div><h3>Live on the date</h3><p>On the date we named, with the previous version one command away. Trained at your counter. From then on, the next module builds on top, not from scratch.</p></div>
         </div>
-
         <div class="stats-bar">
-          <div class="stat-item">
-            <strong>20+</strong>
-            <span>Years of project and delivery management</span>
-          </div>
-          <div class="stat-item">
-            <strong>Every change</strong>
-            <span>Reviewed by a human before it ships</span>
-          </div>
-          <div class="stat-item">
-            <strong>Day one</strong>
-            <span>Your system keeps its own records, from the first release</span>
-          </div>
-          <div class="stat-item">
-            <strong>100%</strong>
-            <span>Yours — code, repo, credentials, docs</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div>
-            <span class="eyebrow">The founder</span>
-            <h2 class="h2" style="margin: 14px 0 20px;">Who PUSH AI is.</h2>
-            <p class="lead" style="margin-bottom: 20px;">
-              PUSH AI is an AI-augmented software delivery practice founded and run by Len Klopper — twenty-plus years of IT project management and Scrum Master work across banking, insurance, telecoms and retail, now applied to a new model: senior delivery discipline steering AI development tooling. Based in South Africa, building for SMEs in any industry, across South Africa and Africa.
-            </p>
-            <p class="lead" style="margin-bottom: 20px;">
-              It's senior-led by design. The person who scopes your system is the person who gates every change before it goes live, and answers the phone afterwards. No account managers, no hand-offs, no one to chase. And every build is machine-learning first: it records what happened, when, and how it turned out from day one, so your system is AI-ready the moment you want it to be — without a rebuild.
-            </p>
-            <!-- Optional: remove the line below to keep the name story off the site -->
-            <p class="lead">The name is the founder's story: PUSH — Pray Until Something Happens. Proverbs 16:3 — commit the work, and the plans are established.</p>
-          </div>
-
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-year">2000s</div>
-              <div>
-                <h4>Delivery management</h4>
-                <p>Project management and Scrum Master roles on corporate systems in banking, insurance, telecoms and retail — the discipline that now sits on every review gate.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2010s</div>
-              <div>
-                <h4>Back at the keyboard</h4>
-                <p>Hands-on again: React, TypeScript, modern architectures, real business platforms.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">2024–26</div>
-              <div>
-                <h4>PUSH AI</h4>
-                <p>AI-augmented development for SMEs: an operations system for a fabrication business, a dealership platform, an online store, a content-distribution platform — the first of many industries.</p>
-              </div>
-            </div>
-            <div class="timeline-item">
-              <div class="timeline-year">Now</div>
-              <div>
-                <h4>The next process</h4>
-                <p>Quoting, work tracking, stock, bookings, portals — one process at a time, for whatever business you run, logged from day one so each system can start learning later.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BUILT WITH -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Built with</span>
-          <h2 class="h2">Tools we ship with — only what's actually in the builds.</h2>
-        </div>
-        <div class="stack-grid">
-          <div class="stack-group">
-            <h4>Languages</h4>
-            <div class="stack-tags">
-              <span class="tag">Java</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Python</span>
-              <span class="tag">SQL</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>Frontend</h4>
-            <div class="stack-tags">
-              <span class="tag">React</span>
-              <span class="tag">Vite</span>
-              <span class="tag">Tailwind</span>
-              <span class="tag">PWA — no app store needed</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>Backend &amp; data</h4>
-            <div class="stack-tags">
-              <span class="tag">Spring Boot</span>
-              <span class="tag">Node.js</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Supabase</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Row-level security</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>Platform</h4>
-            <div class="stack-tags">
-              <span class="tag">AWS</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Docker</span>
-              <span class="tag">GitHub</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>AI-augmented build</h4>
-            <div class="stack-tags">
-              <span class="tag">Claude</span>
-              <span class="tag">Claude Code</span>
-            </div>
-          </div>
-          <div class="stack-group">
-            <h4>Reaches your team on</h4>
-            <div class="stack-tags">
-              <span class="tag">WhatsApp</span>
-              <span class="tag">Email</span>
-              <span class="tag">Any phone</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SIX PROMISES -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Every build, every time</span>
-          <h2 class="h2">Six promises. No exceptions.</h2>
-        </div>
-        <div class="principles-grid">
-          <div class="principle">
-            <h3>&lt; You approve before we build /&gt;</h3>
-            <p>Before each build round, you sign off — in your own words — exactly what it will deliver and what "done" looks like. No developer shorthand, no surprises.</p>
-          </div>
-          <div class="principle">
-            <h3>&lt; Nothing reaches production unread /&gt;</h3>
-            <p>Every change is reviewed by a human before it goes near your live system, and we stop and show you our work at set points along the way.</p>
-          </div>
-          <div class="principle">
-            <h3>&lt; Verified, never assumed /&gt;</h3>
-            <p>A success message isn't evidence. Database, deployed version, real data — checked before anything is called done.</p>
-          </div>
-          <div class="principle">
-            <h3>&lt; Machine Learning first /&gt;</h3>
-            <p>From the first release your system records what happened, when, and how it turned out — the clean, structured data machine learning runs on. So when you're ready for forecasting, automation or an AI assistant that knows your business, it plugs in on top. No rebuild, no starting over.</p>
-          </div>
-          <div class="principle">
-            <h3>&lt; We name the date, then keep it /&gt;</h3>
-            <p>Dates come from real engineering capacity, not sales pressure. Once a date is confirmed to you, it holds.</p>
-          </div>
-          <div class="principle">
-            <h3>&lt; You own everything /&gt;</h3>
-            <p>Code, repository, credentials, handover documentation. No lock-in — walk away with all of it at any point.</p>
-          </div>
+          <div class="stat-item"><strong>Built at the counter</strong><span>With the buyer, the quoter and the foreman</span></div>
+          <div class="stat-item"><strong>Every change</strong><span>Read by a person before it goes live</span></div>
+          <div class="stat-item"><strong>Every role</strong><span>Walked on test before every release</span></div>
+          <div class="stat-item"><strong>Yours</strong><span>Code, hosting, data, documentation</span></div>
         </div>
       </div>
     </section>
@@ -1284,21 +1182,16 @@
     <section class="section cta-section" id="contact">
       <div class="container">
         <span class="eyebrow">Start here</span>
-        <h2 class="h2">Start with a free scoping session.</h2>
-        <p class="lead">
-          Ninety minutes. No cost, no obligation. We map where your business is losing time to manual work, and you leave with a written scope and an honest date — whether or not you build it with us.
-        </p>
+        <h2 class="h2">See Jobbook in fifteen minutes.</h2>
+        <p class="lead">On WhatsApp, on your phone, with practice data. No slides. If it fits, we book a morning on your floor — in person in the Vaal and Gauteng, on screen anywhere else in South Africa — free, no obligation, and you leave with a written scope, a price and a date.</p>
         <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
-          <!-- WhatsApp link is wired in the script below (WHATSAPP_NUMBER) -->
-          <a href="mailto:lenklopper03@gmail.com" class="btn btn-primary" data-wa>WhatsApp Len <span class="arrow">→</span></a>
-          <!-- TODO: swap the personal Gmail for a business address once the domain is live -->
-          <a href="mailto:lenklopper03@gmail.com" class="btn btn-ghost">Email Len</a>
+          <a href="mailto:len@pushai.co.za" class="btn btn-primary" data-wa>WhatsApp Len <span class="arrow">→</span></a>
+          <a href="mailto:len@pushai.co.za" class="btn btn-ghost">Email Len</a>
         </div>
         <div class="status-row">
-          <div><span class="status-dot"></span> Scoping session <strong>Free · 90 min</strong></div>
-          <div>Reply <strong>within one working day</strong></div>
-          <div>Based in <strong>South Africa</strong> · working across Africa</div>
-          <div>Timezone <strong>SAST (UTC+2)</strong></div>
+          <div><span class="status-dot"></span> Reply <strong>within one working day</strong></div>
+          <div>Based in <strong>Henley on Klip, Vaal Triangle</strong></div>
+          <div>Serving <strong>the Vaal Triangle · Gauteng · South Africa</strong> · on site or on screen</div>
         </div>
       </div>
     </section>
@@ -1308,36 +1201,39 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">FAQ</span>
-          <h2 class="h2">Frequently asked questions.</h2>
+          <h2 class="h2">Questions workshops ask.</h2>
         </div>
         <div class="faq-list">
-          <div class="faq-item">
-            <div class="faq-q">What do you actually build?</div>
-            <p class="faq-a">Real production systems that solve a business problem: operations and work tracking, quoting, stock, bookings, enquiry capture, customer records, online stores, client portals, reporting. Any industry — workshops, dealerships, retail, clinics, agencies, logistics, professional services. The first build is the one costing you the most hours, delivered end to end, with the logging in place so the next one plugs in without a rewrite.</p>
+          <div class="faq-item"><div class="faq-q">We run on Pastel. Does Jobbook replace it?</div><p class="faq-a">No. Pastel stays your book of record for quotes, POs and invoices. Jobbook does everything in front of Pastel — the enquiry, the material list, the supplier prices, the order at the quoted ceiling, the shop floor — and hands Pastel the lines in its own column order. PO and invoice numbers are typed back so the job and the paperwork sit together.</p></div>
+          <div class="faq-item"><div class="faq-q">It's one person. What if he disappears?</div><p class="faq-a">The hosting is in your name, the code is in your repository, the documentation is in your drive, and every screen is standard React and PostgreSQL. Any competent developer picks it up in a day. That is deliberate: Jobbook is built so you never depend on PUSH AI to keep running.</p></div>
+          <div class="faq-item"><div class="faq-q">Our people aren't computer people.</div><p class="faq-a">Neither were the people it was built with. Each screen is shaped with the person who does that job, on a test copy, before it goes live: the buyer's screen with the buyer, the foreman's board with the foreman. Big buttons, plain words, in the language the floor speaks, and nothing you can break by pressing.</p></div>
+          <div class="faq-item"><div class="faq-q">Our suppliers are in a spreadsheet one person keeps.</div><p class="faq-a">That's where every workshop starts. The last import took 283 suppliers from one spreadsheet into a register grouped the way the buyer thinks, with every change logged. Her own words for each supplier stayed next to the group.</p></div>
+          <div class="faq-item"><div class="faq-q">How long until we're on it?</div><p class="faq-a">Front office and Quoting go live in weeks, not quarters. Your suppliers, clients, people and forms are loaded for you. Each further module is a two-week sprint, in the order your own work demands. The date comes from real capacity, and once confirmed it holds.</p></div>
+          <div class="faq-item"><div class="faq-q">Can we start with just one part?</div><p class="faq-a">Yes. Most workshops start with Quoting and Procurement, because that is where the money leaks — prices that went stale between quote and order. The shop floor follows when the office is settled.</p></div>
+          <div class="faq-item"><div class="faq-q">We're not in the Vaal. Does that matter?</div><p class="faq-a">No. Jobbook runs in the browser and is hosted on AWS, so a workshop in Pretoria, Durban or Cape Town runs it the same way. The scoping morning is in person across the Vaal and Gauteng and on screen everywhere else; the test copy, the walk-through and the training work the same either way. Africa is next on the map.</p></div>
+          <div class="faq-item"><div class="faq-q">Phones and tablets on the floor?</div><p class="faq-a">Yes, and nothing to install. Jobbook runs in the browser, so the owner sees the boards and approves what's waiting from his phone, in the bakkie or at home. The shop runs on one tablet per bay — the foreman's board, clock-ins, QC and "ready" — rather than a device per person, so a R3 000 tablet and a screen protector does a bay. The office keeps the PC for quoting, prices and orders. Same system, same job, three screens.</p></div>
+          <div class="faq-item"><div class="faq-q">Load-shedding and no signal on site?</div><p class="faq-a">Built to keep working on a phone with unreliable signal, to notify the team over WhatsApp, and hosted on AWS with daily backups. When the power comes back, so does the office — nothing in a book that got left at the counter.</p></div>
+          <div class="faq-item"><div class="faq-q">Why "PUSH AI" if the page never mentions AI?</div><p class="faq-a">Because the AI isn't the product; the blue book on a screen is. Two places it sits: behind the scenes, where AI tooling builds Jobbook fast under a human gate — and ahead of you, where Jobbook records every job, price and clock-in from day one so that, after a few months, it can tell you which quotes you'll win, how long a job really takes and which supplier will be late. No rebuild, no data science project. It's just ready when you are.</p></div>
+          <div class="faq-item"><div class="faq-q">Who builds it, and is AI involved?</div><p class="faq-a">PUSH AI is a senior-led practice: Len Klopper, who ran delivery for Nedbank, Discovery, Investec and MTN, now applied to one trade. AI development tooling does the heavy lifting under that gate; a person reads every change before it reaches your live system, and nothing is called done until it has been walked as every role on the test copy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="eyebrow">Who's behind it</span>
+            <h2 class="h2" style="margin: 14px 0 20px;">Then I arrived in engineering and fabrication.</h2>
+            <p class="lead" style="margin-bottom: 20px;">Ran delivery for Nedbank, Discovery, Investec and MTN — the kind of systems that can't go down and can't miss the date. Then arrived in engineering and fabrication: one morning at a counter in Vanderbijlpark, next to the buyer, looking at a requisition in pen, a PO printed three times and a quote that had gone stale between winning the job and ordering the steel.</p>
+            <p class="lead" style="margin-bottom: 20px;">Nobody had built for her. Sage starts when the money moves. The overseas tools had never heard of Pastel. So we built it on her floor, one screen at a time — the RFQ board, the price requests, the shop board — and walked every release as every role before it went live. That became Jobbook: built for the counter, not the accountant. It started in the Vaal; it's for every fabrication and engineering workshop in Gauteng and South Africa.</p>
+            <p class="lead">Len Klopper · Henley on Klip · PUSH — Pray Until Something Happens · Proverbs 16:3</p>
           </div>
-          <div class="faq-item">
-            <div class="faq-q">What does it cost?</div>
-            <p class="faq-a">It's scoped and priced in writing in the free session, before anything is built — so you know the number up front. Because the build is AI-augmented and there's no agency overhead to carry, PUSH AI comes in 20–30% below traditional agency pricing, with faster delivery.</p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">How long does it take?</div>
-            <p class="faq-a">First builds are scoped small enough to ship in weeks, not quarters. The date comes from real engineering capacity, not sales pressure — and once it's confirmed to you, it's kept.</p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Who actually does the work?</div>
-            <p class="faq-a">A small, senior-led practice. Len scopes your system, gates every change before it goes live, and answers the phone afterwards. AI development tooling does the heavy lifting under that gate — no account manager between you and the person accountable for the build.</p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">Do I own what you build?</div>
-            <p class="faq-a">Everything. Code, repository, credentials and handover documentation are yours. If we part ways, you take all of it with you.</p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">You use AI to build it — is that safe?</div>
-            <p class="faq-a">AI does the heavy lifting. A delivery lead with twenty years behind him reviews every change before it reaches your live system, and nothing is called done until the database and real data say so. "Done means done, verified with evidence." Speed from the AI, safety from the gate.</p>
-          </div>
-          <div class="faq-item">
-            <div class="faq-q">What about load-shedding and patchy signal?</div>
-            <p class="faq-a">Systems are built to keep working on a phone with unreliable signal, to notify your team over WhatsApp, and to run on hosting chosen for reliability rather than fashion.</p>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-year">Before</div><div><h4>Delivery lead</h4><p>Nedbank, Discovery, Investec, MTN — systems that couldn't go down and couldn't miss the date. The review gate comes from there.</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">The counter</div><div><h4>A buyer, a requisition, a stale quote</h4><p>Built with her, on her floor, one screen at a time. Walked as every role before every release.</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">Jobbook</div><div><h4>Live, and growing</h4><p>Receiving, stock, job cost and cash-in by December. Then every workshop in Gauteng and South Africa that still runs on a blue book. Africa next.</p></div></div>
           </div>
         </div>
       </div>
@@ -1346,21 +1242,25 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 PUSH AI · Vaal Triangle, South Africa</div>
+      <div>© 2026 PUSH AI · Jobbook · Henley on Klip, Vaal Triangle, South Africa</div>
       <div class="footer-links">
-        <a href="mailto:lenklopper03@gmail.com">Email</a>
+        <a href="mailto:len@pushai.co.za">Email</a>
         <a href="#contact" data-wa>WhatsApp</a>
-        <a href="https://dora.dev/dora-report-2025/" target="_blank" rel="noopener">DORA 2025 report</a>
+        <a href="#faq">Built with Claude Code, under a human gate</a>
       </div>
     </div>
   </footer>
 
-  <script>
+
+
+
+
+<script>
     // WhatsApp links — set the number once (digits only, international format, e.g. '27821234567')
     // and every element with data-wa becomes a wa.me link. Until then they fall back to email / the contact section.
     (function () {
       const WHATSAPP_NUMBER = '27688963349';
-      const WHATSAPP_TEXT = "Hi Len, I'd like to book a scoping session.";
+      const WHATSAPP_TEXT = "Hi Len, I saw Jobbook on your site. Can you show me in 15 minutes?";
       if (!WHATSAPP_NUMBER) return;
       const href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(WHATSAPP_TEXT);
       document.querySelectorAll('[data-wa]').forEach(a => { a.href = href; a.target = '_blank'; a.rel = 'noopener'; });
