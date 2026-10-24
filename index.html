@@ -709,7 +709,7 @@
     .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 8px; }
     .shot { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--surface-1); }
     .shot .ph { aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); background: var(--surface-2); letter-spacing: .08em; }
-    .shot img { width: 100%; display: block; }
+    .shot img { width: 100%; display: block; aspect-ratio: 16/10; object-fit: cover; object-position: top left; }
     .shot figcaption { padding: 12px 14px; font-size: 14px; line-height: 1.5; color: var(--text-body); }
     .shot figcaption strong { color: var(--text-strong); }
     .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
@@ -725,6 +725,115 @@
     .mod h3 { font-size: 17px; margin: 8px 0 6px; color: var(--text-strong); }
     .mod p { font-size: 14px; line-height: 1.55; color: var(--text-body); margin: 0; }
     @media (max-width: 860px) { .shots, .mods { grid-template-columns: 1fr; } .price-grid { grid-template-columns: 1fr; } }
+    /* ---------- v3: diagrams + summaries ---------- */
+    /* chain diagram */
+    .chain { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; margin: 8px 0 28px; position: relative; }
+    .chain::before { content: ""; position: absolute; left: 8%; right: 8%; top: 22px; height: 2px; background: var(--rule-strong); }
+    .chain-node { position: relative; text-align: center; padding: 0 6px; }
+    .chain-dot { width: 44px; height: 44px; border-radius: 50%; margin: 0 auto 10px; display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700; font-size: 13px; background: var(--accent); color: #fff; border: 3px solid var(--surface-page); position: relative; }
+    .chain-node.soon .chain-dot { background: var(--surface-2); color: var(--text-muted); border-color: var(--surface-page); box-shadow: 0 0 0 2px var(--rule-strong); }
+    .chain-name { font-weight: 600; color: var(--text-strong); font-size: 15px; line-height: 1.2; }
+    .chain-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-top: 4px; }
+    .chain-node.soon .chain-tag { color: var(--text-muted); }
+    @media (max-width: 760px) {
+      .chain { grid-template-columns: repeat(3, 1fr); row-gap: 22px; }
+      .chain::before { display: none; }
+    }
+
+    /* stage cards — summary visible, full story on tap */
+    .stages { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    @media (max-width: 860px) { .stages { grid-template-columns: 1fr; } }
+    .stage { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface-1); padding: 0; }
+    .stage summary { list-style: none; cursor: pointer; padding: 18px 18px 16px; }
+    .stage summary::-webkit-details-marker { display: none; }
+    .stage .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); display: flex; justify-content: space-between; }
+    .stage.soon .k { color: var(--text-muted); }
+    .stage .k .more { color: var(--text-muted); letter-spacing: 0; text-transform: none; }
+    .stage[open] .k .more::after { content: "close"; }
+    .stage:not([open]) .k .more::after { content: "more +"; }
+    .stage h3 { font-size: 17px; margin: 8px 0 10px; color: var(--text-strong); }
+    .stage .row { display: grid; grid-template-columns: 58px 1fr; gap: 8px; font-size: 14px; line-height: 1.45; margin-top: 6px; }
+    .stage .row b { font-family: var(--font-mono); font-weight: 600; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); padding-top: 3px; }
+    .stage .row.on b { color: var(--accent); }
+    .stage .row span { color: var(--text-muted); }
+    .stage .row.on span { color: var(--text-strong); }
+    .stage.soon .row.on b { color: var(--text-muted); }
+    .stage .full { padding: 0 18px 18px; border-top: 1px solid var(--rule); font-size: 14px; line-height: 1.55; color: var(--text-muted); }
+    .stage .full p { margin: 12px 0 0; }
+    .stage .full strong { color: var(--text-strong); }
+
+    /* modules strip */
+    .mods { grid-template-columns: repeat(4, 1fr); }
+    .mod p { font-size: 13.5px; }
+    .mod.learn { grid-column: 1 / -1; display: grid; grid-template-columns: 200px 1fr; gap: 18px; align-items: center; }
+    @media (max-width: 860px) { .mods { grid-template-columns: 1fr 1fr; } .mod.learn { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .mods { grid-template-columns: 1fr; } }
+
+    /* pastel hand-off diagram */
+    .handoff { display: grid; grid-template-columns: 1fr 150px 1fr; gap: 0; align-items: stretch; margin: 8px 0 28px; }
+    .handoff .box { border: 1px solid var(--rule); border-radius: 12px; background: var(--surface-1); padding: 22px 22px 18px; }
+    .handoff .box.jb { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+    .handoff .box .k { font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+    .handoff .box.jb .k { color: var(--accent); }
+    .handoff .box h3 { font-size: 20px; margin: 6px 0 4px; }
+    .handoff .box .sub { font-size: 13px; color: var(--text-muted); margin: 0 0 14px; }
+    .handoff .box ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .handoff .box li { font-family: var(--font-mono); font-size: 12px; padding: 5px 9px; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface-2); color: var(--text-body); }
+    .handoff .arrows { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 0 8px; }
+    .handoff .arr { text-align: center; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); line-height: 1.35; }
+    .handoff .arr .line { display: block; font-size: 22px; color: var(--accent); line-height: 1; margin-bottom: 4px; }
+    .handoff .arr.back .line { color: var(--text-muted); }
+    .handoff .moment { grid-column: 1 / -1; text-align: center; font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 14px; }
+    .handoff .moment strong { color: var(--text-strong); }
+    @media (max-width: 760px) {
+      .handoff { grid-template-columns: 1fr; }
+      .handoff .arrows { flex-direction: row; justify-content: space-around; padding: 14px 0; }
+      .handoff .arr .line { transform: rotate(90deg); display: inline-block; margin: 0 0 6px; }
+    }
+    .runs-on { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    /* proof tiles */
+    .proof-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 20px; }
+    @media (max-width: 760px) { .proof-tiles { grid-template-columns: 1fr 1fr; } }
+    .ptile { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface-1); padding: 20px 18px 16px; }
+    .ptile strong { display: block; font-size: 34px; font-weight: 700; letter-spacing: -.03em; color: var(--text-strong); line-height: 1; margin-bottom: 8px; }
+    .ptile strong small { font-size: 16px; font-weight: 500; color: var(--text-muted); }
+    .ptile span { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); line-height: 1.4; display: block; }
+    .proof-quote { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; margin: 0 0 20px; }
+    .proof-quote p { margin: 0; font-size: 20px; font-weight: 600; color: var(--text-strong); letter-spacing: -.01em; line-height: 1.3; }
+    .proof-quote span { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); display: block; margin-top: 6px; }
+    .more-link { border: 1px solid var(--rule); border-radius: 10px; background: var(--surface-1); max-width: 760px; }
+    .more-link summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--accent); }
+    .more-link summary::-webkit-details-marker { display: none; }
+    .more-link summary::after { content: " +"; }
+    .more-link[open] summary::after { content: " –"; }
+    .more-link .body { padding: 0 18px 18px; font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .more-link .body p { margin: 0 0 12px; }
+    .more-link .body strong { color: var(--text-strong); }
+
+    /* stepper */
+    .stepper { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; }
+    .step:not(:last-child)::before { content: ""; position: absolute; left: 44px; right: -18px; top: 19px; height: 2px; background: var(--rule-strong); }
+    .step { position: relative; text-align: left; }
+    .step .n { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--font-mono); font-weight: 700; font-size: 13px; background: var(--surface-1); color: var(--accent); border: 2px solid var(--accent); margin-bottom: 14px; position: relative; box-shadow: 0 0 0 6px var(--surface-page); }
+    .step h3 { font-size: 16px; margin-bottom: 6px; }
+    .step p { margin: 0; font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+    .step .free { font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); margin-left: 6px; }
+    @media (max-width: 760px) {
+      .stepper { grid-template-columns: 1fr; gap: 22px; }
+      .step:not(:last-child)::before { left: 19px; right: auto; top: 44px; bottom: -22px; width: 2px; height: auto; }
+      .step { display: grid; grid-template-columns: 40px 1fr; gap: 16px; align-items: start; }
+      .step .n { margin-bottom: 0; }
+    }
+
+    /* FAQ accordion */
+    .faq-item { padding: 0; }
+    .faq-item summary { list-style: none; cursor: pointer; padding: 18px 0; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent); font-size: 18px; flex: none; }
+    .faq-item[open] summary::after { content: "–"; }
+    .faq-q { margin: 0; }
+    .faq-a { padding: 0 0 18px; }
 </style>
   <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -938,6 +1047,7 @@
       <nav class="navlinks">
         <a class="navlink" href="#replace">What goes away</a>
         <a class="navlink" href="#modules">Modules</a>
+        <a class="navlink" href="#pastel">Pastel</a>
         <a class="navlink" href="#price">Price</a>
         <a class="navlink" href="#proof">Proof</a>
         <a class="navlink" href="#faq">FAQ</a>
@@ -960,7 +1070,7 @@
           <span class="eyebrow">Jobbook · for fabrication &amp; engineering workshops · Vaal Triangle · Gauteng · South Africa</span>
           <h1 class="h1">Jobbook.<br>From the enquiry<br><em>to the invoice.</em></h1>
           <p class="hero-lead">
-            The blue book at the counter, on a screen. Every link in the chain — the front office, the quoter, the buyer, the foreman, dispatch, month-end — working in one system instead of six books that don't talk to each other. The owner runs it from his phone; the foreman from a tablet in the bay; Pastel stays your book of record. Built on a fabrication floor in the Vaal Triangle, in production today. Now rolling out across Gauteng and South Africa.
+            The blue book at the counter, on a screen. Front office, quoter, buyer, foreman, dispatch and month-end in one system instead of six books that don't talk. Owner on his phone, foreman on a tablet, Pastel stays the book. Built on a fabrication floor in the Vaal Triangle; in production today.
           </p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary" data-wa>See it in 15 minutes <span class="arrow">→</span></a>
@@ -989,31 +1099,92 @@
         <div class="section-head">
           <span class="eyebrow">What goes away</span>
           <h2 class="h2">From the blue book to the screen,<br>stage by stage.</h2>
-          <p class="lead">Every workshop has a blue book: the ledger at the counter where the jobs, the deliveries, the clock-ins and what you are still owed get written in pen. Jobbook is that book, and the spreadsheets and paper around it, on one screen — a list made walking the floor with the buyer, the quoter and the foreman. Every line on the right is live or being built with them now.</p>
+          <p class="lead">Six stages, one chain. Four are live on a workshop floor today; two are being built with the buyer for November. Tap a stage for the full story.</p>
         </div>
-        <table class="replace-table">
-          <thead><tr><th>Stage</th><th>Today, in most workshops</th><th>On the system</th></tr></thead>
-          <tbody>
-            <tr><td>01 Enquiry</td>
-              <td class="today">The client's email sits in one inbox. A row typed into an RFQ workbook — fourteen of them, one per year and per person. "Who's quoting this?" asked across the office. A whiteboard of what's out, and the blue book at the counter.</td>
-              <td class="after"><strong>One RFQ board.</strong> Every enquiry, who's on it, what stage, since when. Allocation by name with receipt confirmation. Search across everything, from any phone.</td></tr>
-            <tr><td>02 Quote</td>
-              <td class="today">A paper "quote-only" form with the material list in pen. A photo of it on WhatsApp to the buyer. Prices scribbled in the margin. The cost sheet rebuilt in Excel, then retyped into Pastel.</td>
-              <td class="after"><strong>Material list typed once.</strong> Prices land beside each line, cheapest shaded, one chosen. Cost sheet with margin on the same screen. Copy for Pastel in its column order. Two-stage approval with e-signature.</td></tr>
-            <tr><td>03 Buy</td>
-              <td class="today">A supplier list in one spreadsheet one person keeps. Price requests by phone and email, chased from memory. A paper requisition walked to the MD. A PO printed three times: one for the supplier, one for stores, one filed for month-end.</td>
-              <td class="after"><strong>283 suppliers in groups, one import.</strong> One email per supplier, only its lines, reminders in one click, every open request on one screen. Dated prices that go amber when stale. Buy at or under the quoted price per line; dearer waits for the MD on screen. One PO per supplier.</td></tr>
-            <tr><td>04 Make</td>
-              <td class="today">Job cards photocopied. The job board on a whiteboard, wiped weekly. Clock cards and a casual register in a book. "Where's job 5590?" answered by walking to the shop. QC on a signature.</td>
-              <td class="after"><strong>Job board and workshop board.</strong> Not started → In progress → QC → Complete → Dispatched. Workers and clock-ins per job, time per job, QC holding points, job card PDF. The foreman's tablet, not the whiteboard.</td></tr>
-            <tr><td>05 Receive</td>
-              <td class="today">Delivery notes matched to POs by hand. Short deliveries remembered, or not. Returns and credits on a sticky note. A stock list in Excel nobody trusts.</td>
-              <td class="after"><strong>Open items per order:</strong> ordered, delivered, invoiced, credited, days open. Short deliveries and returns on the row. A stock list that grows as you buy. <em>Building, Nov 2026.</em></td></tr>
-            <tr><td>06 Invoice</td>
-              <td class="today">Month-end: the filed third copy of every PO pulled to work out what the job really cost. Cash-in guessed from quote values and who usually pays late.</td>
-              <td class="after"><strong>Job cost on a screen:</strong> quoted, ordered, invoiced, per job. Cash-in by week from quote values and payment terms. Pastel stays the book; the system does the remembering. <em>Building, Nov 2026.</em></td></tr>
-          </tbody>
-        </table>
+
+        <div class="chain" aria-label="The six stages of a job: Enquiry, Quote, Buy, Make, Receive, Invoice">
+          <div class="chain-node"><div class="chain-dot">01</div><div class="chain-name">Enquiry</div><div class="chain-tag">Live</div></div>
+          <div class="chain-node"><div class="chain-dot">02</div><div class="chain-name">Quote</div><div class="chain-tag">Live</div></div>
+          <div class="chain-node"><div class="chain-dot">03</div><div class="chain-name">Buy</div><div class="chain-tag">Live</div></div>
+          <div class="chain-node"><div class="chain-dot">04</div><div class="chain-name">Make</div><div class="chain-tag">Live</div></div>
+          <div class="chain-node soon"><div class="chain-dot">05</div><div class="chain-name">Receive</div><div class="chain-tag">Nov 2026</div></div>
+          <div class="chain-node soon"><div class="chain-dot">06</div><div class="chain-name">Invoice</div><div class="chain-tag">Nov 2026</div></div>
+        </div>
+
+        <div class="stages">
+          <details class="stage">
+            <summary>
+              <div class="k"><span>01 · Enquiry · Live</span><span class="more"></span></div>
+              <h3>One RFQ board.</h3>
+              <div class="row"><b>Today</b><span>Fourteen RFQ spreadsheets, a whiteboard, the blue book.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Every enquiry, who's on it, what stage — from any phone.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> The client's email sits in one inbox. A row typed into an RFQ workbook — fourteen of them, one per year and per person. "Who's quoting this?" asked across the office.</p>
+              <p><strong>On Jobbook.</strong> Allocation by name with receipt confirmation. Search across everything. Email at every stage.</p>
+            </div>
+          </details>
+          <details class="stage">
+            <summary>
+              <div class="k"><span>02 · Quote · Live</span><span class="more"></span></div>
+              <h3>Material list typed once.</h3>
+              <div class="row"><b>Today</b><span>Material list in pen, a photo on WhatsApp, retyped into Pastel.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Prices beside each line, cost sheet with margin, copy for Pastel.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> A paper "quote-only" form. Prices scribbled in the margin. The cost sheet rebuilt in Excel, then retyped into Pastel.</p>
+              <p><strong>On Jobbook.</strong> Cheapest price shaded, one chosen per line. Cost sheet and margin on the same screen. Copy for Pastel in its column order. Two-stage approval with e-signature.</p>
+            </div>
+          </details>
+          <details class="stage">
+            <summary>
+              <div class="k"><span>03 · Buy · Live</span><span class="more"></span></div>
+              <h3>Every open request on one screen.</h3>
+              <div class="row"><b>Today</b><span>Price requests chased from memory. A PO printed three times.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Reminders in one click. Buy at or under the quoted price, per line.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> A supplier list in one spreadsheet one person keeps. A paper requisition walked to the MD. One PO for the supplier, one for stores, one filed for month-end.</p>
+              <p><strong>On Jobbook.</strong> 283 suppliers in groups, one import. One email per supplier, only its lines. Dated prices that go amber when stale. Dearer than the quote waits for the MD, on screen. One PO per supplier.</p>
+            </div>
+          </details>
+          <details class="stage">
+            <summary>
+              <div class="k"><span>04 · Make · Live</span><span class="more"></span></div>
+              <h3>The foreman's tablet, not the whiteboard.</h3>
+              <div class="row"><b>Today</b><span>A whiteboard wiped weekly. "Where's job 5590?" — walk to the shop.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Workshop board: not started → in progress → QC → complete → dispatched.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> Job cards photocopied. Clock cards and a casual register in a book. QC on a signature.</p>
+              <p><strong>On Jobbook.</strong> Workers and clock-ins per job, time per job, QC holding points, dispatch with delivery number, job card as a PDF. One tablet per bay.</p>
+            </div>
+          </details>
+          <details class="stage soon">
+            <summary>
+              <div class="k"><span>05 · Receive · Nov 2026</span><span class="more"></span></div>
+              <h3>Open items per order.</h3>
+              <div class="row"><b>Today</b><span>Delivery notes matched by hand. A stock list nobody trusts.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Ordered, delivered, invoiced, credited, days open — on the row.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> Short deliveries remembered, or not. Returns and credits on a sticky note. Stock in Excel.</p>
+              <p><strong>On Jobbook.</strong> Short deliveries and returns on the order row. A stock list that grows as you buy. Being shaped with the buyer on a test copy now.</p>
+            </div>
+          </details>
+          <details class="stage soon">
+            <summary>
+              <div class="k"><span>06 · Invoice · Nov 2026</span><span class="more"></span></div>
+              <h3>Job cost on a screen.</h3>
+              <div class="row"><b>Today</b><span>Month-end from the filed third copy of every PO. Cash-in guessed.</span></div>
+              <div class="row on"><b>Jobbook</b><span>Quoted, ordered, invoiced per job. Cash-in by week.</span></div>
+            </summary>
+            <div class="full">
+              <p><strong>Today.</strong> Cash-in guessed from quote values and who usually pays late.</p>
+              <p><strong>On Jobbook.</strong> Cash-in by week from quote values and payment terms. Pastel stays the book; the system does the remembering.</p>
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -1045,45 +1216,61 @@
     <section class="section" id="modules">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Six modules</span>
-          <h2 class="h2">Start with the two that hurt most.<br>Add the rest in your order. The seventh builds itself.</h2>
+          <span class="eyebrow">Six modules + one</span>
+          <h2 class="h2">Start with the two that hurt most.<br>Add the rest in your order.</h2>
+          <p class="lead">One module per stage of the chain above. The seventh builds itself from day one.</p>
         </div>
         <div class="mods">
-          <div class="mod"><div class="k">01 · Live</div><h3>Front office</h3><p>RFQ board, client register, quoter allocation with receipt, two-stage approval with e-signature, email at every stage, search.</p></div>
-          <div class="mod"><div class="k">02 · Live</div><h3>Quoting</h3><p>Material list per RFQ. Send for price — one email per supplier, only its lines. Prices in a grid, cheapest shaded. Cost sheet with margin. Copy for Pastel.</p></div>
-          <div class="mod"><div class="k">03 · Live · ordering on test</div><h3>Procurement</h3><p>Supplier register by group. Open requests on one screen, reminders in a click. Dated prices. Orders at or under the quoted ceiling per line. One PO per supplier, Pastel number typed back.</p></div>
-          <div class="mod"><div class="k">04 · Live</div><h3>The shop</h3><p>Job board and workshop board. Workers and clock-ins per job, time per job, QC holding points, dispatch with delivery number, job card PDF. Runs on a tablet in the bay.</p></div>
-          <div class="mod"><div class="k b">05 · Building · Nov 2026</div><h3>Receiving &amp; store</h3><p>Open items per order — ordered, delivered, invoiced, credited, days open. Short deliveries, returns, the buyer's "phone today" tick. Stock list that grows as you buy.</p></div>
-          <div class="mod"><div class="k b">06 · Building · Nov 2026</div><h3>Job cost &amp; cash</h3><p>Per job: quoted, ordered, invoiced. Cash-in by week from quote values and payment terms. Activity log under everything, from day one.</p></div>
-          <div class="mod"><div class="k b">07 · Next</div><h3>Jobbook learns</h3><p>After a few months of your own jobs it starts answering what the blue book never could: which quotes you're likely to win, how long a job like this really takes, which supplier will be late, what the margin was on the last ten jobs like this one. Recording from day one, so it's ready when you are.</p></div>
+          <div class="mod"><div class="k">01 · Live</div><h3>Front office</h3><p>RFQ board, client register, allocation with receipt, two-stage e-signature approval.</p></div>
+          <div class="mod"><div class="k">02 · Live</div><h3>Quoting</h3><p>Material list, send for price, prices in a grid, cost sheet with margin, copy for Pastel.</p></div>
+          <div class="mod"><div class="k">03 · Live · ordering on test</div><h3>Procurement</h3><p>Supplier register, open requests, dated prices, orders at the quoted ceiling, one PO per supplier.</p></div>
+          <div class="mod"><div class="k">04 · Live</div><h3>The shop</h3><p>Job and workshop boards, clock-ins, QC holding points, dispatch, job card PDF. On a tablet.</p></div>
+          <div class="mod"><div class="k b">05 · Nov 2026</div><h3>Receiving &amp; store</h3><p>Open items per order, short deliveries, returns, a stock list that grows as you buy.</p></div>
+          <div class="mod"><div class="k b">06 · Nov 2026</div><h3>Job cost &amp; cash</h3><p>Quoted, ordered, invoiced per job. Cash-in by week.</p></div>
+          <div class="mod learn"><div><div class="k b">07 · Builds itself</div><h3>Jobbook learns</h3></div><p>Every job, price and clock-in is recorded from day one. After a few months it answers what the blue book never could: which quotes you'll win, how long a job like this really takes, which supplier will be late, what the margin was on the last ten like it. No rebuild — it's ready when you are.</p></div>
         </div>
       </div>
     </section>
 
-    <!-- WORKS WITH -->
-    <section class="section">
+    <!-- WORKS WITH PASTEL -->
+    <section class="section" id="pastel">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Works with what you already run</span>
-          <h2 class="h2">Pastel stays the book. Jobbook does the remembering.</h2>
+          <h2 class="h2">Pastel starts when you buy.<br>Jobbook is everything before that.</h2>
+          <p class="lead">Accounting packages begin when the money moves. Overseas job-shop tools don't know Pastel and don't come to your floor. Jobbook does the work in front of Pastel, then hands it the lines.</p>
         </div>
-        <div class="stack-grid">
-          <div class="stack-group"><h4>Pastel Partner</h4><div class="stack-tags"><span class="tag">Copy for Pastel — quote lines and POs in Pastel's column order</span><span class="tag">PO and invoice numbers typed back</span><span class="tag">Export-based reconciliation — next</span></div></div>
-          <div class="stack-group"><h4>Jarison clocking</h4><div class="stack-tags"><span class="tag">Clock-number import for casual time — in build</span></div></div>
-          <div class="stack-group"><h4>Email &amp; WhatsApp</h4><div class="stack-tags"><span class="tag">Mail from your own domain (Microsoft 365)</span><span class="tag">Supplier price requests, reminders, approvals</span><span class="tag">WhatsApp for the team and for support</span></div></div>
-          <div class="stack-group"><h4>Any device, no app to install</h4><div class="stack-tags"><span class="tag">Owner's phone — the boards, approvals, search</span><span class="tag">One tablet per bay — the foreman's workshop board, QC and clock-ins</span><span class="tag">Office PC — quoting, prices, orders</span><span class="tag">Works on patchy signal on site</span></div></div>
-          <div class="stack-group"><h4>Hosting</h4><div class="stack-tags"><span class="tag">Hosted in your name on AWS</span><span class="tag">Row-level security — each role sees its own</span><span class="tag">Backed up daily</span></div></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- WHO ELSE -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Who else does this?</span>
-          <h2 class="h2">Pastel starts when you've decided to buy.<br>Jobbook is everything before that.</h2>
-          <p class="lead">Accounting packages begin when the money moves. Overseas job-shop tools don't know Pastel and don't come to your floor. Nobody else sends the price requests, chases the slow ones, lines the prices up dated, and holds the order to the quote. Jobbook does — and then hands Pastel the lines. And because every job, price and clock-in is recorded from day one, it's the only one that gets smarter with your workshop.</p>
+        <div class="handoff" aria-label="How Jobbook hands over to Pastel">
+          <div class="box jb">
+            <div class="k">Jobbook · before the money moves</div>
+            <h3>The counter</h3>
+            <p class="sub">Enquiry → Quote → Buy → Make → Receive</p>
+            <ul><li>RFQ board</li><li>Material list</li><li>Supplier prices</li><li>Order at the quote</li><li>Shop floor</li><li>Delivery notes</li></ul>
+          </div>
+          <div class="arrows">
+            <div class="arr"><span class="line">→</span>Quote lines &amp; POs<br>in Pastel's column order</div>
+            <div class="arr back"><span class="line">←</span>PO &amp; invoice numbers<br>typed back</div>
+          </div>
+          <div class="box">
+            <div class="k">Pastel Partner · the book of record</div>
+            <h3>The accounts</h3>
+            <p class="sub">Quote no. → PO no. → Invoice no.</p>
+            <ul><li>Quotes</li><li>Purchase orders</li><li>Invoices</li><li>Month-end</li></ul>
+          </div>
+          <div class="moment">Hand-off moment: <strong>the decision to buy.</strong> Nothing in Pastel is retyped; nothing in Pastel is replaced.</div>
+        </div>
+
+        <div class="runs-on">
+          <span class="tag">Owner's phone — boards, approvals, search</span>
+          <span class="tag">One tablet per bay — the foreman's board</span>
+          <span class="tag">Office PC — quoting, prices, orders</span>
+          <span class="tag">No app to install</span>
+          <span class="tag">Mail from your own domain</span>
+          <span class="tag">WhatsApp for the team</span>
+          <span class="tag">Jarison clocking import — in build</span>
+          <span class="tag">Hosted in your name on AWS · backed up daily</span>
+          <span class="tag">Works on patchy signal on site</span>
         </div>
       </div>
     </section>
@@ -1127,32 +1314,26 @@
         <div class="section-head">
           <span class="eyebrow">Proof, not promises</span>
           <h2 class="h2">In production on a workshop floor,<br>every link in the chain.</h2>
-          <p class="lead">Built with a fabrication and construction company in the Vaal Triangle, stage by stage, from their own Excel workbooks and paper forms. In daily use in the office, in procurement and on the shop floor. The client's name follows once it is in writing; a walkthrough is available on request.</p>
+          <p class="lead">Built with a fabrication and construction company in the Vaal Triangle, from their own Excel workbooks and paper forms. In daily use in the office, in procurement and on the shop floor.</p>
         </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="work-tag">Fabrication &amp; construction · Vaal Triangle · In production</div>
-            <h3>Stage by stage, on their floor</h3>
-            <p>Started as an RFQ board replacing fourteen spreadsheets. Now the front office, quoting, the supplier register, price requests and the shop floor are live; the order and receiving screens are being shaped with the buyer on a test copy before they go live. Every release walked as every role, promoted on the date, with a rollback ready.</p>
-            <div class="work-metrics">
-              <div class="metric"><strong>14</strong><span>Spreadsheets replaced</span></div>
-              <div class="metric"><strong>283</strong><span>Suppliers, 40 groups, one import</span></div>
-              <div class="metric"><strong>4 days</strong><span>Early on the last release</span></div>
-            </div>
-            <a href="#contact" class="worklink" data-wa>Ask for a walkthrough <span class="arrow">→</span></a>
-          </article>
-          <article class="work-card">
-            <div class="work-tag">What the buyer said</div>
-            <h3>"I have to stay inside the quoted amount."</h3>
-            <p>The job is won two or three weeks after the quote. The supplier who had stock no longer does. She re-sources at or under the quoted price, chases what is late, matches delivery notes to orders, and files the third copy of every PO so month-end can see what the job really cost. That is Jobbook: it remembers what she is owed, so she doesn't have to.</p>
-            <div class="work-metrics">
-              <div class="metric"><strong>One screen</strong><span>Every open price request</span></div>
-              <div class="metric"><strong>Per line</strong><span>Buy at or under the quote</span></div>
-              <div class="metric"><strong>Logged</strong><span>Every change, who and when</span></div>
-            </div>
-            <a href="#screens" class="worklink">See the screens <span class="arrow">→</span></a>
-          </article>
+        <div class="proof-tiles">
+          <div class="ptile"><strong>14 <small>→ 1</small></strong><span>Spreadsheets replaced by one RFQ board</span></div>
+          <div class="ptile"><strong>283</strong><span>Suppliers, 40 groups, one import</span></div>
+          <div class="ptile"><strong>4 <small>of 6</small></strong><span>Stages live; two building for Nov 2026</span></div>
+          <div class="ptile"><strong>4 days</strong><span>Early on the last release</span></div>
         </div>
+        <div class="proof-quote">
+          <p>"I have to stay inside the quoted amount."</p>
+          <span>The buyer — the sentence Jobbook's procurement module was built around</span>
+        </div>
+        <details class="more-link">
+          <summary>Read how it happened, stage by stage</summary>
+          <div class="body">
+            <p><strong>It started as an RFQ board</strong> replacing fourteen spreadsheets. Now the front office, quoting, the supplier register, price requests and the shop floor are live; the order and receiving screens are being shaped with the buyer on a test copy before they go live. Every release is walked as every role, promoted on the date, with a rollback ready.</p>
+            <p><strong>The buyer's problem.</strong> The job is won two or three weeks after the quote. The supplier who had stock no longer does. She re-sources at or under the quoted price, chases what is late, matches delivery notes to orders, and files the third copy of every PO so month-end can see what the job really cost. Jobbook remembers what she is owed, so she doesn't have to.</p>
+            <p>The client's name follows once it is in writing. <a href="#contact" class="worklink" data-wa>Ask for a walkthrough <span class="arrow">→</span></a></p>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -1163,17 +1344,11 @@
           <span class="eyebrow">How it gets into your workshop</span>
           <h2 class="h2">Four steps. You see where you are in every one.</h2>
         </div>
-        <div class="process-grid">
-          <div class="process-step"><div class="process-num">01</div><h3>Fifteen minutes on WhatsApp</h3><p>You see Jobbook end to end — enquiry to dispatch — on your phone, with practice data. If it's not for you, that's the end of it.</p></div>
-          <div class="process-step"><div class="process-num">02</div><h3>A morning on your floor</h3><p>Free. We walk the paper — the requisition, the quote form, the PO printed three times — and write down, in your words, what Jobbook must do for you, with a price and a date.</p></div>
-          <div class="process-step"><div class="process-num">03</div><h3>Your people try it first</h3><p>Your suppliers, clients and forms are loaded. The buyer, the quoter and the foreman use it on a test copy, with practice data and test mail, and tell us what's wrong. Every release is walked as every role before it's called done.</p></div>
-          <div class="process-step"><div class="process-num">04</div><h3>Live on the date</h3><p>On the date we named, with the previous version one command away. Trained at your counter. From then on, the next module builds on top, not from scratch.</p></div>
-        </div>
-        <div class="stats-bar">
-          <div class="stat-item"><strong>Built at the counter</strong><span>With the buyer, the quoter and the foreman</span></div>
-          <div class="stat-item"><strong>Every change</strong><span>Read by a person before it goes live</span></div>
-          <div class="stat-item"><strong>Every role</strong><span>Walked on test before every release</span></div>
-          <div class="stat-item"><strong>Yours</strong><span>Code, hosting, data, documentation</span></div>
+        <div class="stepper">
+          <div class="step"><div class="n">01</div><div><h3>Fifteen minutes on WhatsApp</h3><p>Enquiry to dispatch, on your phone, with practice data. Not for you? That's the end of it.</p></div></div>
+          <div class="step"><div class="n">02</div><div><h3>A morning on your floor <span class="free">free</span></h3><p>We walk your paper and write down, in your words, what Jobbook must do — with a price and a date.</p></div></div>
+          <div class="step"><div class="n">03</div><div><h3>Your people try it first</h3><p>Buyer, quoter and foreman use a test copy with your suppliers and forms loaded, and tell us what's wrong.</p></div></div>
+          <div class="step"><div class="n">04</div><div><h3>Live on the date</h3><p>The date we named, trained at your counter, previous version one command away. The next module builds on top.</p></div></div>
         </div>
       </div>
     </section>
@@ -1183,7 +1358,7 @@
       <div class="container">
         <span class="eyebrow">Start here</span>
         <h2 class="h2">See Jobbook in fifteen minutes.</h2>
-        <p class="lead">On WhatsApp, on your phone, with practice data. No slides. If it fits, we book a morning on your floor — in person in the Vaal and Gauteng, on screen anywhere else in South Africa — free, no obligation, and you leave with a written scope, a price and a date.</p>
+        <p class="lead">On WhatsApp, on your phone, with practice data. No slides. If it fits, we book a free morning on your floor — in person in the Vaal and Gauteng, on screen anywhere in South Africa — and you leave with a written scope, a price and a date.</p>
         <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
           <a href="mailto:len@pushai.co.za" class="btn btn-primary" data-wa>WhatsApp Len <span class="arrow">→</span></a>
           <a href="mailto:len@pushai.co.za" class="btn btn-ghost">Email Len</a>
@@ -1204,17 +1379,13 @@
           <h2 class="h2">Questions workshops ask.</h2>
         </div>
         <div class="faq-list">
-          <div class="faq-item"><div class="faq-q">We run on Pastel. Does Jobbook replace it?</div><p class="faq-a">No. Pastel stays your book of record for quotes, POs and invoices. Jobbook does everything in front of Pastel — the enquiry, the material list, the supplier prices, the order at the quoted ceiling, the shop floor — and hands Pastel the lines in its own column order. PO and invoice numbers are typed back so the job and the paperwork sit together.</p></div>
-          <div class="faq-item"><div class="faq-q">It's one person. What if he disappears?</div><p class="faq-a">The hosting is in your name, the code is in your repository, the documentation is in your drive, and every screen is standard React and PostgreSQL. Any competent developer picks it up in a day. That is deliberate: Jobbook is built so you never depend on PUSH AI to keep running.</p></div>
-          <div class="faq-item"><div class="faq-q">Our people aren't computer people.</div><p class="faq-a">Neither were the people it was built with. Each screen is shaped with the person who does that job, on a test copy, before it goes live: the buyer's screen with the buyer, the foreman's board with the foreman. Big buttons, plain words, in the language the floor speaks, and nothing you can break by pressing.</p></div>
-          <div class="faq-item"><div class="faq-q">Our suppliers are in a spreadsheet one person keeps.</div><p class="faq-a">That's where every workshop starts. The last import took 283 suppliers from one spreadsheet into a register grouped the way the buyer thinks, with every change logged. Her own words for each supplier stayed next to the group.</p></div>
-          <div class="faq-item"><div class="faq-q">How long until we're on it?</div><p class="faq-a">Front office and Quoting go live in weeks, not quarters. Your suppliers, clients, people and forms are loaded for you. Each further module is a two-week sprint, in the order your own work demands. The date comes from real capacity, and once confirmed it holds.</p></div>
-          <div class="faq-item"><div class="faq-q">Can we start with just one part?</div><p class="faq-a">Yes. Most workshops start with Quoting and Procurement, because that is where the money leaks — prices that went stale between quote and order. The shop floor follows when the office is settled.</p></div>
-          <div class="faq-item"><div class="faq-q">We're not in the Vaal. Does that matter?</div><p class="faq-a">No. Jobbook runs in the browser and is hosted on AWS, so a workshop in Pretoria, Durban or Cape Town runs it the same way. The scoping morning is in person across the Vaal and Gauteng and on screen everywhere else; the test copy, the walk-through and the training work the same either way. Africa is next on the map.</p></div>
-          <div class="faq-item"><div class="faq-q">Phones and tablets on the floor?</div><p class="faq-a">Yes, and nothing to install. Jobbook runs in the browser, so the owner sees the boards and approves what's waiting from his phone, in the bakkie or at home. The shop runs on one tablet per bay — the foreman's board, clock-ins, QC and "ready" — rather than a device per person, so a R3 000 tablet and a screen protector does a bay. The office keeps the PC for quoting, prices and orders. Same system, same job, three screens.</p></div>
-          <div class="faq-item"><div class="faq-q">Load-shedding and no signal on site?</div><p class="faq-a">Built to keep working on a phone with unreliable signal, to notify the team over WhatsApp, and hosted on AWS with daily backups. When the power comes back, so does the office — nothing in a book that got left at the counter.</p></div>
-          <div class="faq-item"><div class="faq-q">Why "PUSH AI" if the page never mentions AI?</div><p class="faq-a">Because the AI isn't the product; the blue book on a screen is. Two places it sits: behind the scenes, where AI tooling builds Jobbook fast under a human gate — and ahead of you, where Jobbook records every job, price and clock-in from day one so that, after a few months, it can tell you which quotes you'll win, how long a job really takes and which supplier will be late. No rebuild, no data science project. It's just ready when you are.</p></div>
-          <div class="faq-item"><div class="faq-q">Who builds it, and is AI involved?</div><p class="faq-a">PUSH AI is a senior-led practice: Len Klopper, who ran delivery for Nedbank, Discovery, Investec and MTN, now applied to one trade. AI development tooling does the heavy lifting under that gate; a person reads every change before it reaches your live system, and nothing is called done until it has been walked as every role on the test copy.</p></div>
+          <details class="faq-item"><summary><div class="faq-q">We run on Pastel. Does Jobbook replace it?</div></summary><p class="faq-a">No. Pastel stays your book of record for quotes, POs and invoices. Jobbook does everything in front of it and hands Pastel the lines in its own column order; PO and invoice numbers are typed back.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">It's one person. What if he disappears?</div></summary><p class="faq-a">The hosting is in your name, the code in your repository, the documentation in your drive, and every screen is standard React and PostgreSQL. Any competent developer picks it up in a day. That's deliberate.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">Our people aren't computer people.</div></summary><p class="faq-a">Neither were the people it was built with. Each screen is shaped with the person who does that job, on a test copy, before it goes live. Big buttons, plain words, nothing you can break by pressing.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">How long until we're on it, and can we start with one part?</div></summary><p class="faq-a">Front office and Quoting go live in weeks, with your suppliers, clients and forms loaded for you. Each further module is a two-week sprint, in your order. Most workshops start with Quoting and Procurement — that's where the money leaks. Once a date is confirmed, it holds.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">We're not in the Vaal. Does that matter?</div></summary><p class="faq-a">No. Jobbook runs in the browser on AWS, so Pretoria, Durban or Cape Town run it the same way. The scoping morning is in person across the Vaal and Gauteng and on screen everywhere else.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">Load-shedding and no signal on site?</div></summary><p class="faq-a">Built to keep working on a phone with unreliable signal, to notify the team over WhatsApp, and hosted on AWS with daily backups. When the power comes back, so does the office.</p></details>
+          <details class="faq-item"><summary><div class="faq-q">Why "PUSH AI" if the page never mentions AI?</div></summary><p class="faq-a">Because the AI isn't the product; the blue book on a screen is. AI tooling builds Jobbook fast under a human gate — a person reads every change before it reaches you — and Jobbook records every job, price and clock-in from day one so it can start answering questions after a few months. Ready when you are.</p></details>
         </div>
       </div>
     </section>
@@ -1226,14 +1397,13 @@
           <div>
             <span class="eyebrow">Who's behind it</span>
             <h2 class="h2" style="margin: 14px 0 20px;">Then I arrived in engineering and fabrication.</h2>
-            <p class="lead" style="margin-bottom: 20px;">Ran delivery for Nedbank, Discovery, Investec and MTN — the kind of systems that can't go down and can't miss the date. Then arrived in engineering and fabrication: one morning at a counter in Vanderbijlpark, next to the buyer, looking at a requisition in pen, a PO printed three times and a quote that had gone stale between winning the job and ordering the steel.</p>
-            <p class="lead" style="margin-bottom: 20px;">Nobody had built for her. Sage starts when the money moves. The overseas tools had never heard of Pastel. So we built it on her floor, one screen at a time — the RFQ board, the price requests, the shop board — and walked every release as every role before it went live. That became Jobbook: built for the counter, not the accountant. It started in the Vaal; it's for every fabrication and engineering workshop in Gauteng and South Africa.</p>
+            <p class="lead" style="margin-bottom: 20px;">Ran delivery for Nedbank, Discovery, Investec and MTN — the kind of systems that can't go down and can't miss the date. Then one morning at a counter in Vanderbijlpark, next to the buyer: a requisition in pen, a PO printed three times, a quote gone stale between winning the job and ordering the steel. Nobody had built for her. So we built it on her floor, one screen at a time. That became Jobbook.</p>
             <p class="lead">Len Klopper · Henley on Klip · PUSH — Pray Until Something Happens · Proverbs 16:3</p>
           </div>
           <div class="timeline">
-            <div class="timeline-item"><div class="timeline-year">Before</div><div><h4>Delivery lead</h4><p>Nedbank, Discovery, Investec, MTN — systems that couldn't go down and couldn't miss the date. The review gate comes from there.</p></div></div>
-            <div class="timeline-item"><div class="timeline-year">The counter</div><div><h4>A buyer, a requisition, a stale quote</h4><p>Built with her, on her floor, one screen at a time. Walked as every role before every release.</p></div></div>
-            <div class="timeline-item"><div class="timeline-year">Jobbook</div><div><h4>Live, and growing</h4><p>Receiving, stock, job cost and cash-in by December. Then every workshop in Gauteng and South Africa that still runs on a blue book. Africa next.</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">Before</div><div><h4>Delivery lead</h4><p>Nedbank, Discovery, Investec, MTN. The review gate comes from there.</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">The counter</div><div><h4>A buyer, a requisition, a stale quote</h4><p>Built with her, on her floor. Walked as every role before every release.</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">Jobbook</div><div><h4>Live, and growing</h4><p>Receiving, stock, job cost and cash-in by December. Then every workshop in Gauteng and South Africa still on a blue book.</p></div></div>
           </div>
         </div>
       </div>
